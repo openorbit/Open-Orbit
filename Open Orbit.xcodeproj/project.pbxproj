@@ -1,0 +1,915 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC2011A9294BC4120017188F /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = EC2011A8294BC4120017188F /* Algorithms */; };
+		EC2011AC294BC4480017188F /* ComplexModule in Frameworks */ = {isa = PBXBuildFile; productRef = EC2011AB294BC4480017188F /* ComplexModule */; };
+		EC2011AE294BC4480017188F /* Numerics in Frameworks */ = {isa = PBXBuildFile; productRef = EC2011AD294BC4480017188F /* Numerics */; };
+		EC2011B0294BC4480017188F /* RealModule in Frameworks */ = {isa = PBXBuildFile; productRef = EC2011AF294BC4480017188F /* RealModule */; };
+		EC2011B3294BC4760017188F /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = EC2011B2294BC4760017188F /* Collections */; };
+		EC2011B5294BC4760017188F /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = EC2011B4294BC4760017188F /* DequeModule */; };
+		EC2011B7294BC4760017188F /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = EC2011B6294BC4760017188F /* OrderedCollections */; };
+		EC2011BA294BC4B70017188F /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = EC2011B9294BC4B70017188F /* SwiftCSV */; };
+		EC4EDB4029AB5051000A899D /* CelMek in Frameworks */ = {isa = PBXBuildFile; productRef = EC4EDB3F29AB5051000A899D /* CelMek */; };
+		EC4EDB5229AE7FDB000A899D /* Sim in Frameworks */ = {isa = PBXBuildFile; productRef = EC4EDB5129AE7FDB000A899D /* Sim */; };
+		EC73CF3C26C8DFD00024C0A5 /* Steppable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */; };
+		EC73CF3D26C8DFD00024C0A5 /* Steppable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */; };
+		EC73CF3E26C8DFD00024C0A5 /* Steppable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */; };
+		EC73CF4026C8E4AE0024C0A5 /* VectorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3F26C8E4AE0024C0A5 /* VectorExtensions.swift */; };
+		EC73CF4126C8E4AE0024C0A5 /* VectorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3F26C8E4AE0024C0A5 /* VectorExtensions.swift */; };
+		EC73CF4226C8E4AE0024C0A5 /* VectorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3F26C8E4AE0024C0A5 /* VectorExtensions.swift */; };
+		EC9716E426CF74420041FBF5 /* ReferenceFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9716E326CF74420041FBF5 /* ReferenceFrame.swift */; };
+		EC9716E526CF74420041FBF5 /* ReferenceFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9716E326CF74420041FBF5 /* ReferenceFrame.swift */; };
+		EC9716E726CF745C0041FBF5 /* SolarPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9716E626CF745C0041FBF5 /* SolarPanel.swift */; };
+		EC9716E826CF745C0041FBF5 /* SolarPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9716E626CF745C0041FBF5 /* SolarPanel.swift */; };
+		EC9AC23926A2AA0D002EFBD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC23826A2AA0D002EFBD9 /* AppDelegate.swift */; };
+		EC9AC23B26A2AA0D002EFBD9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC23A26A2AA0D002EFBD9 /* GameViewController.swift */; };
+		EC9AC23D26A2AA0D002EFBD9 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = EC9AC23C26A2AA0D002EFBD9 /* art.scnassets */; };
+		EC9AC23F26A2AA0E002EFBD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC9AC23E26A2AA0E002EFBD9 /* Assets.xcassets */; };
+		EC9AC24226A2AA0E002EFBD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9AC24026A2AA0E002EFBD9 /* Main.storyboard */; };
+		EC9AC24E26A2AA0E002EFBD9 /* Open_OrbitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC24D26A2AA0E002EFBD9 /* Open_OrbitTests.swift */; };
+		EC9AC25926A2AA0E002EFBD9 /* Open_OrbitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC25826A2AA0E002EFBD9 /* Open_OrbitUITests.swift */; };
+		EC9AC26B26A2ACFD002EFBD9 /* Spacecraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC26A26A2ACFD002EFBD9 /* Spacecraft.swift */; };
+		EC9AC26C26A2ACFD002EFBD9 /* Spacecraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC26A26A2ACFD002EFBD9 /* Spacecraft.swift */; };
+		EC9AC26E26A2AE5F002EFBD9 /* SimObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC26D26A2AE5F002EFBD9 /* SimObject.swift */; };
+		EC9AC26F26A2AE5F002EFBD9 /* SimObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC26D26A2AE5F002EFBD9 /* SimObject.swift */; };
+		EC9AC27426A2AF9C002EFBD9 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC27326A2AF9C002EFBD9 /* Payload.swift */; };
+		EC9AC27526A2AF9C002EFBD9 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC27326A2AF9C002EFBD9 /* Payload.swift */; };
+		EC9AC27726A2AFC3002EFBD9 /* Actuator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC27626A2AFC3002EFBD9 /* Actuator.swift */; };
+		EC9AC27826A2AFC3002EFBD9 /* Actuator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC27626A2AFC3002EFBD9 /* Actuator.swift */; };
+		EC9AC27A26A2AFFE002EFBD9 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC27926A2AFFE002EFBD9 /* Sensor.swift */; };
+		EC9AC27B26A2AFFE002EFBD9 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC27926A2AFFE002EFBD9 /* Sensor.swift */; };
+		EC9AC27D26A2B6A6002EFBD9 /* PropellantTank.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC27C26A2B6A6002EFBD9 /* PropellantTank.swift */; };
+		EC9AC27E26A2B6A6002EFBD9 /* PropellantTank.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC27C26A2B6A6002EFBD9 /* PropellantTank.swift */; };
+		EC9AC28026A2B877002EFBD9 /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC27F26A2B877002EFBD9 /* Battery.swift */; };
+		EC9AC28126A2B877002EFBD9 /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC27F26A2B877002EFBD9 /* Battery.swift */; };
+		EC9AC28326A2C65B002EFBD9 /* OpenOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC28226A2C65B002EFBD9 /* OpenOrbit.swift */; };
+		EC9AC28426A2C65B002EFBD9 /* OpenOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC28226A2C65B002EFBD9 /* OpenOrbit.swift */; };
+		EC9AC28726A2C75B002EFBD9 /* Mercury.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC28626A2C75B002EFBD9 /* Mercury.swift */; };
+		EC9AC28826A2C75B002EFBD9 /* Mercury.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC28626A2C75B002EFBD9 /* Mercury.swift */; };
+		ECF36EF42945A975000600A8 /* Thruster.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36EF32945A975000600A8 /* Thruster.swift */; };
+		ECF36EF62945A98D000600A8 /* PropellerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36EF52945A98D000600A8 /* PropellerEngine.swift */; };
+		ECF36EF82945A9B0000600A8 /* TurbopropEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36EF72945A9B0000600A8 /* TurbopropEngine.swift */; };
+		ECF36EFA2945A9E4000600A8 /* JetEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36EF92945A9E4000600A8 /* JetEngine.swift */; };
+		ECF36EFC2945AA17000600A8 /* LiquidRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36EFB2945AA17000600A8 /* LiquidRocket.swift */; };
+		ECF36EFE2945AA51000600A8 /* SolidRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36EFD2945AA51000600A8 /* SolidRocket.swift */; };
+		ECF36F002945AA6F000600A8 /* MagnetoTorqueBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36EFF2945AA6F000600A8 /* MagnetoTorqueBar.swift */; };
+		ECF36F022945AA93000600A8 /* ReactionWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36F012945AA93000600A8 /* ReactionWheel.swift */; };
+		ECF36F042945AB6B000600A8 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36F032945AB6B000600A8 /* Planet.swift */; };
+		ECF36F0D294AF9C7000600A8 /* stars.csv in Resources */ = {isa = PBXBuildFile; fileRef = ECF36F0C294AF9C7000600A8 /* stars.csv */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC9AC24A26A2AA0E002EFBD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC9AC22D26A2AA0D002EFBD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC9AC23426A2AA0D002EFBD9;
+			remoteInfo = "Open Orbit";
+		};
+		EC9AC25526A2AA0E002EFBD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC9AC22D26A2AA0D002EFBD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC9AC23426A2AA0D002EFBD9;
+			remoteInfo = "Open Orbit";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steppable.swift; sourceTree = "<group>"; };
+		EC73CF3F26C8E4AE0024C0A5 /* VectorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorExtensions.swift; sourceTree = "<group>"; };
+		EC9716E326CF74420041FBF5 /* ReferenceFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceFrame.swift; sourceTree = "<group>"; };
+		EC9716E626CF745C0041FBF5 /* SolarPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarPanel.swift; sourceTree = "<group>"; };
+		EC9AC23526A2AA0D002EFBD9 /* Open Orbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Open Orbit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9AC23826A2AA0D002EFBD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC9AC23A26A2AA0D002EFBD9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		EC9AC23C26A2AA0D002EFBD9 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		EC9AC23E26A2AA0E002EFBD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC9AC24126A2AA0E002EFBD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC9AC24326A2AA0E002EFBD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC9AC24426A2AA0E002EFBD9 /* Open_Orbit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Open_Orbit.entitlements; sourceTree = "<group>"; };
+		EC9AC24926A2AA0E002EFBD9 /* Open OrbitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Open OrbitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9AC24D26A2AA0E002EFBD9 /* Open_OrbitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Open_OrbitTests.swift; sourceTree = "<group>"; };
+		EC9AC24F26A2AA0E002EFBD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC9AC25426A2AA0E002EFBD9 /* Open OrbitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Open OrbitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC9AC25826A2AA0E002EFBD9 /* Open_OrbitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Open_OrbitUITests.swift; sourceTree = "<group>"; };
+		EC9AC25A26A2AA0E002EFBD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC9AC26A26A2ACFD002EFBD9 /* Spacecraft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacecraft.swift; sourceTree = "<group>"; };
+		EC9AC26D26A2AE5F002EFBD9 /* SimObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimObject.swift; sourceTree = "<group>"; };
+		EC9AC27326A2AF9C002EFBD9 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
+		EC9AC27626A2AFC3002EFBD9 /* Actuator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actuator.swift; sourceTree = "<group>"; };
+		EC9AC27926A2AFFE002EFBD9 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
+		EC9AC27C26A2B6A6002EFBD9 /* PropellantTank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropellantTank.swift; sourceTree = "<group>"; };
+		EC9AC27F26A2B877002EFBD9 /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
+		EC9AC28226A2C65B002EFBD9 /* OpenOrbit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenOrbit.swift; sourceTree = "<group>"; };
+		EC9AC28626A2C75B002EFBD9 /* Mercury.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mercury.swift; sourceTree = "<group>"; };
+		ECF36EF32945A975000600A8 /* Thruster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thruster.swift; sourceTree = "<group>"; };
+		ECF36EF52945A98D000600A8 /* PropellerEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropellerEngine.swift; sourceTree = "<group>"; };
+		ECF36EF72945A9B0000600A8 /* TurbopropEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurbopropEngine.swift; sourceTree = "<group>"; };
+		ECF36EF92945A9E4000600A8 /* JetEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetEngine.swift; sourceTree = "<group>"; };
+		ECF36EFB2945AA17000600A8 /* LiquidRocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidRocket.swift; sourceTree = "<group>"; };
+		ECF36EFD2945AA51000600A8 /* SolidRocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidRocket.swift; sourceTree = "<group>"; };
+		ECF36EFF2945AA6F000600A8 /* MagnetoTorqueBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnetoTorqueBar.swift; sourceTree = "<group>"; };
+		ECF36F012945AA93000600A8 /* ReactionWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionWheel.swift; sourceTree = "<group>"; };
+		ECF36F032945AB6B000600A8 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		ECF36F0C294AF9C7000600A8 /* stars.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stars.csv; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC9AC23226A2AA0D002EFBD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC4EDB5229AE7FDB000A899D /* Sim in Frameworks */,
+				EC2011B3294BC4760017188F /* Collections in Frameworks */,
+				EC2011A9294BC4120017188F /* Algorithms in Frameworks */,
+				EC2011AC294BC4480017188F /* ComplexModule in Frameworks */,
+				EC2011B5294BC4760017188F /* DequeModule in Frameworks */,
+				EC4EDB4029AB5051000A899D /* CelMek in Frameworks */,
+				EC2011AE294BC4480017188F /* Numerics in Frameworks */,
+				EC2011B0294BC4480017188F /* RealModule in Frameworks */,
+				EC2011BA294BC4B70017188F /* SwiftCSV in Frameworks */,
+				EC2011B7294BC4760017188F /* OrderedCollections in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9AC24626A2AA0E002EFBD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9AC25126A2AA0E002EFBD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC9AC22C26A2AA0D002EFBD9 = {
+			isa = PBXGroup;
+			children = (
+				EC9AC23726A2AA0D002EFBD9 /* Open Orbit */,
+				EC9AC24C26A2AA0E002EFBD9 /* Open OrbitTests */,
+				EC9AC25726A2AA0E002EFBD9 /* Open OrbitUITests */,
+				EC9AC23626A2AA0D002EFBD9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC9AC23626A2AA0D002EFBD9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC9AC23526A2AA0D002EFBD9 /* Open Orbit.app */,
+				EC9AC24926A2AA0E002EFBD9 /* Open OrbitTests.xctest */,
+				EC9AC25426A2AA0E002EFBD9 /* Open OrbitUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC9AC23726A2AA0D002EFBD9 /* Open Orbit */ = {
+			isa = PBXGroup;
+			children = (
+				ECF36F0C294AF9C7000600A8 /* stars.csv */,
+				EC9AC26926A2AA69002EFBD9 /* Simulator */,
+				EC9AC23826A2AA0D002EFBD9 /* AppDelegate.swift */,
+				EC9AC23A26A2AA0D002EFBD9 /* GameViewController.swift */,
+				EC9AC23C26A2AA0D002EFBD9 /* art.scnassets */,
+				EC9AC23E26A2AA0E002EFBD9 /* Assets.xcassets */,
+				EC9AC24026A2AA0E002EFBD9 /* Main.storyboard */,
+				EC9AC24326A2AA0E002EFBD9 /* Info.plist */,
+				EC9AC24426A2AA0E002EFBD9 /* Open_Orbit.entitlements */,
+				EC73CF3F26C8E4AE0024C0A5 /* VectorExtensions.swift */,
+			);
+			path = "Open Orbit";
+			sourceTree = "<group>";
+		};
+		EC9AC24C26A2AA0E002EFBD9 /* Open OrbitTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC9AC24D26A2AA0E002EFBD9 /* Open_OrbitTests.swift */,
+				EC9AC24F26A2AA0E002EFBD9 /* Info.plist */,
+			);
+			path = "Open OrbitTests";
+			sourceTree = "<group>";
+		};
+		EC9AC25726A2AA0E002EFBD9 /* Open OrbitUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EC9AC25826A2AA0E002EFBD9 /* Open_OrbitUITests.swift */,
+				EC9AC25A26A2AA0E002EFBD9 /* Info.plist */,
+			);
+			path = "Open OrbitUITests";
+			sourceTree = "<group>";
+		};
+		EC9AC26926A2AA69002EFBD9 /* Simulator */ = {
+			isa = PBXGroup;
+			children = (
+				ECF36F0629466BF1000600A8 /* Sensors */,
+				ECF36F052945AB77000600A8 /* Power */,
+				ECF36EF22945A940000600A8 /* Actuators */,
+				EC9AC28526A2C740002EFBD9 /* Spacecraft */,
+				EC9AC26A26A2ACFD002EFBD9 /* Spacecraft.swift */,
+				EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */,
+				EC9AC26D26A2AE5F002EFBD9 /* SimObject.swift */,
+				EC9AC27326A2AF9C002EFBD9 /* Payload.swift */,
+				EC9AC27926A2AFFE002EFBD9 /* Sensor.swift */,
+				EC9AC27C26A2B6A6002EFBD9 /* PropellantTank.swift */,
+				EC9AC28226A2C65B002EFBD9 /* OpenOrbit.swift */,
+				EC9716E326CF74420041FBF5 /* ReferenceFrame.swift */,
+				ECF36F032945AB6B000600A8 /* Planet.swift */,
+			);
+			path = Simulator;
+			sourceTree = "<group>";
+		};
+		EC9AC28526A2C740002EFBD9 /* Spacecraft */ = {
+			isa = PBXGroup;
+			children = (
+				ECF36F0B294AF7AB000600A8 /* Mercury */,
+			);
+			path = Spacecraft;
+			sourceTree = "<group>";
+		};
+		ECF36EF22945A940000600A8 /* Actuators */ = {
+			isa = PBXGroup;
+			children = (
+				EC9AC27626A2AFC3002EFBD9 /* Actuator.swift */,
+				ECF36EF32945A975000600A8 /* Thruster.swift */,
+				ECF36EF52945A98D000600A8 /* PropellerEngine.swift */,
+				ECF36EF72945A9B0000600A8 /* TurbopropEngine.swift */,
+				ECF36EF92945A9E4000600A8 /* JetEngine.swift */,
+				ECF36EFB2945AA17000600A8 /* LiquidRocket.swift */,
+				ECF36EFD2945AA51000600A8 /* SolidRocket.swift */,
+				ECF36EFF2945AA6F000600A8 /* MagnetoTorqueBar.swift */,
+				ECF36F012945AA93000600A8 /* ReactionWheel.swift */,
+			);
+			path = Actuators;
+			sourceTree = "<group>";
+		};
+		ECF36F052945AB77000600A8 /* Power */ = {
+			isa = PBXGroup;
+			children = (
+				EC9AC27F26A2B877002EFBD9 /* Battery.swift */,
+				EC9716E626CF745C0041FBF5 /* SolarPanel.swift */,
+			);
+			path = Power;
+			sourceTree = "<group>";
+		};
+		ECF36F0629466BF1000600A8 /* Sensors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sensors;
+			sourceTree = "<group>";
+		};
+		ECF36F0B294AF7AB000600A8 /* Mercury */ = {
+			isa = PBXGroup;
+			children = (
+				EC9AC28626A2C75B002EFBD9 /* Mercury.swift */,
+			);
+			path = Mercury;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC9AC23426A2AA0D002EFBD9 /* Open Orbit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC9AC25D26A2AA0E002EFBD9 /* Build configuration list for PBXNativeTarget "Open Orbit" */;
+			buildPhases = (
+				EC9AC23126A2AA0D002EFBD9 /* Sources */,
+				EC9AC23226A2AA0D002EFBD9 /* Frameworks */,
+				EC9AC23326A2AA0D002EFBD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Open Orbit";
+			packageProductDependencies = (
+				EC2011A8294BC4120017188F /* Algorithms */,
+				EC2011AB294BC4480017188F /* ComplexModule */,
+				EC2011AD294BC4480017188F /* Numerics */,
+				EC2011AF294BC4480017188F /* RealModule */,
+				EC2011B2294BC4760017188F /* Collections */,
+				EC2011B4294BC4760017188F /* DequeModule */,
+				EC2011B6294BC4760017188F /* OrderedCollections */,
+				EC2011B9294BC4B70017188F /* SwiftCSV */,
+				EC4EDB3F29AB5051000A899D /* CelMek */,
+				EC4EDB5129AE7FDB000A899D /* Sim */,
+			);
+			productName = "Open Orbit";
+			productReference = EC9AC23526A2AA0D002EFBD9 /* Open Orbit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC9AC24826A2AA0E002EFBD9 /* Open OrbitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC9AC26026A2AA0E002EFBD9 /* Build configuration list for PBXNativeTarget "Open OrbitTests" */;
+			buildPhases = (
+				EC9AC24526A2AA0E002EFBD9 /* Sources */,
+				EC9AC24626A2AA0E002EFBD9 /* Frameworks */,
+				EC9AC24726A2AA0E002EFBD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC9AC24B26A2AA0E002EFBD9 /* PBXTargetDependency */,
+			);
+			name = "Open OrbitTests";
+			productName = "Open OrbitTests";
+			productReference = EC9AC24926A2AA0E002EFBD9 /* Open OrbitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EC9AC25326A2AA0E002EFBD9 /* Open OrbitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC9AC26326A2AA0E002EFBD9 /* Build configuration list for PBXNativeTarget "Open OrbitUITests" */;
+			buildPhases = (
+				EC9AC25026A2AA0E002EFBD9 /* Sources */,
+				EC9AC25126A2AA0E002EFBD9 /* Frameworks */,
+				EC9AC25226A2AA0E002EFBD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC9AC25626A2AA0E002EFBD9 /* PBXTargetDependency */,
+			);
+			name = "Open OrbitUITests";
+			productName = "Open OrbitUITests";
+			productReference = EC9AC25426A2AA0E002EFBD9 /* Open OrbitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC9AC22D26A2AA0D002EFBD9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					EC9AC23426A2AA0D002EFBD9 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					EC9AC24826A2AA0E002EFBD9 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = EC9AC23426A2AA0D002EFBD9;
+					};
+					EC9AC25326A2AA0E002EFBD9 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = EC9AC23426A2AA0D002EFBD9;
+					};
+				};
+			};
+			buildConfigurationList = EC9AC23026A2AA0D002EFBD9 /* Build configuration list for PBXProject "Open Orbit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC9AC22C26A2AA0D002EFBD9;
+			packageReferences = (
+				EC2011A7294BC4120017188F /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				EC2011AA294BC4480017188F /* XCRemoteSwiftPackageReference "swift-numerics" */,
+				EC2011B1294BC4760017188F /* XCRemoteSwiftPackageReference "swift-collections" */,
+				EC2011B8294BC4B70017188F /* XCRemoteSwiftPackageReference "SwiftCSV" */,
+				EC4EDB3E29AB5051000A899D /* XCRemoteSwiftPackageReference "swift-celmek" */,
+				EC4EDB5029AE7FDB000A899D /* XCRemoteSwiftPackageReference "swift-sim" */,
+			);
+			productRefGroup = EC9AC23626A2AA0D002EFBD9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC9AC23426A2AA0D002EFBD9 /* Open Orbit */,
+				EC9AC24826A2AA0E002EFBD9 /* Open OrbitTests */,
+				EC9AC25326A2AA0E002EFBD9 /* Open OrbitUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC9AC23326A2AA0D002EFBD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC9AC24226A2AA0E002EFBD9 /* Main.storyboard in Resources */,
+				EC9AC23F26A2AA0E002EFBD9 /* Assets.xcassets in Resources */,
+				ECF36F0D294AF9C7000600A8 /* stars.csv in Resources */,
+				EC9AC23D26A2AA0D002EFBD9 /* art.scnassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9AC24726A2AA0E002EFBD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9AC25226A2AA0E002EFBD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC9AC23126A2AA0D002EFBD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECF36EFE2945AA51000600A8 /* SolidRocket.swift in Sources */,
+				EC9716E726CF745C0041FBF5 /* SolarPanel.swift in Sources */,
+				EC9AC28026A2B877002EFBD9 /* Battery.swift in Sources */,
+				ECF36F042945AB6B000600A8 /* Planet.swift in Sources */,
+				ECF36F022945AA93000600A8 /* ReactionWheel.swift in Sources */,
+				ECF36EF62945A98D000600A8 /* PropellerEngine.swift in Sources */,
+				EC9716E426CF74420041FBF5 /* ReferenceFrame.swift in Sources */,
+				EC9AC28726A2C75B002EFBD9 /* Mercury.swift in Sources */,
+				ECF36EFA2945A9E4000600A8 /* JetEngine.swift in Sources */,
+				ECF36F002945AA6F000600A8 /* MagnetoTorqueBar.swift in Sources */,
+				ECF36EF82945A9B0000600A8 /* TurbopropEngine.swift in Sources */,
+				EC73CF3C26C8DFD00024C0A5 /* Steppable.swift in Sources */,
+				EC9AC27426A2AF9C002EFBD9 /* Payload.swift in Sources */,
+				EC9AC27D26A2B6A6002EFBD9 /* PropellantTank.swift in Sources */,
+				EC9AC27A26A2AFFE002EFBD9 /* Sensor.swift in Sources */,
+				EC9AC23B26A2AA0D002EFBD9 /* GameViewController.swift in Sources */,
+				EC9AC26B26A2ACFD002EFBD9 /* Spacecraft.swift in Sources */,
+				ECF36EFC2945AA17000600A8 /* LiquidRocket.swift in Sources */,
+				ECF36EF42945A975000600A8 /* Thruster.swift in Sources */,
+				EC9AC28326A2C65B002EFBD9 /* OpenOrbit.swift in Sources */,
+				EC73CF4026C8E4AE0024C0A5 /* VectorExtensions.swift in Sources */,
+				EC9AC27726A2AFC3002EFBD9 /* Actuator.swift in Sources */,
+				EC9AC26E26A2AE5F002EFBD9 /* SimObject.swift in Sources */,
+				EC9AC23926A2AA0D002EFBD9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9AC24526A2AA0E002EFBD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC73CF4126C8E4AE0024C0A5 /* VectorExtensions.swift in Sources */,
+				EC9AC27826A2AFC3002EFBD9 /* Actuator.swift in Sources */,
+				EC9AC24E26A2AA0E002EFBD9 /* Open_OrbitTests.swift in Sources */,
+				EC9AC26F26A2AE5F002EFBD9 /* SimObject.swift in Sources */,
+				EC73CF3D26C8DFD00024C0A5 /* Steppable.swift in Sources */,
+				EC9AC28126A2B877002EFBD9 /* Battery.swift in Sources */,
+				EC9716E826CF745C0041FBF5 /* SolarPanel.swift in Sources */,
+				EC9716E526CF74420041FBF5 /* ReferenceFrame.swift in Sources */,
+				EC9AC27526A2AF9C002EFBD9 /* Payload.swift in Sources */,
+				EC9AC28426A2C65B002EFBD9 /* OpenOrbit.swift in Sources */,
+				EC9AC26C26A2ACFD002EFBD9 /* Spacecraft.swift in Sources */,
+				EC9AC27E26A2B6A6002EFBD9 /* PropellantTank.swift in Sources */,
+				EC9AC27B26A2AFFE002EFBD9 /* Sensor.swift in Sources */,
+				EC9AC28826A2C75B002EFBD9 /* Mercury.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9AC25026A2AA0E002EFBD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC73CF4226C8E4AE0024C0A5 /* VectorExtensions.swift in Sources */,
+				EC73CF3E26C8DFD00024C0A5 /* Steppable.swift in Sources */,
+				EC9AC25926A2AA0E002EFBD9 /* Open_OrbitUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC9AC24B26A2AA0E002EFBD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC9AC23426A2AA0D002EFBD9 /* Open Orbit */;
+			targetProxy = EC9AC24A26A2AA0E002EFBD9 /* PBXContainerItemProxy */;
+		};
+		EC9AC25626A2AA0E002EFBD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC9AC23426A2AA0D002EFBD9 /* Open Orbit */;
+			targetProxy = EC9AC25526A2AA0E002EFBD9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC9AC24026A2AA0E002EFBD9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC9AC24126A2AA0E002EFBD9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC9AC25B26A2AA0E002EFBD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EC9AC25C26A2AA0E002EFBD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		EC9AC25E26A2AA0E002EFBD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Open Orbit/Open_Orbit.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = UZ3L4HCTN8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Open Orbit/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openorbit.Open-Orbit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EC9AC25F26A2AA0E002EFBD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Open Orbit/Open_Orbit.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = UZ3L4HCTN8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "Open Orbit/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openorbit.Open-Orbit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		EC9AC26126A2AA0E002EFBD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = UZ3L4HCTN8;
+				INFOPLIST_FILE = "Open OrbitTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openorbit.Open-OrbitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Open Orbit.app/Contents/MacOS/Open Orbit";
+			};
+			name = Debug;
+		};
+		EC9AC26226A2AA0E002EFBD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = UZ3L4HCTN8;
+				INFOPLIST_FILE = "Open OrbitTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openorbit.Open-OrbitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Open Orbit.app/Contents/MacOS/Open Orbit";
+			};
+			name = Release;
+		};
+		EC9AC26426A2AA0E002EFBD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = UZ3L4HCTN8;
+				INFOPLIST_FILE = "Open OrbitUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openorbit.Open-OrbitUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Open Orbit";
+			};
+			name = Debug;
+		};
+		EC9AC26526A2AA0E002EFBD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = UZ3L4HCTN8;
+				INFOPLIST_FILE = "Open OrbitUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.openorbit.Open-OrbitUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Open Orbit";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC9AC23026A2AA0D002EFBD9 /* Build configuration list for PBXProject "Open Orbit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9AC25B26A2AA0E002EFBD9 /* Debug */,
+				EC9AC25C26A2AA0E002EFBD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC9AC25D26A2AA0E002EFBD9 /* Build configuration list for PBXNativeTarget "Open Orbit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9AC25E26A2AA0E002EFBD9 /* Debug */,
+				EC9AC25F26A2AA0E002EFBD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC9AC26026A2AA0E002EFBD9 /* Build configuration list for PBXNativeTarget "Open OrbitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9AC26126A2AA0E002EFBD9 /* Debug */,
+				EC9AC26226A2AA0E002EFBD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC9AC26326A2AA0E002EFBD9 /* Build configuration list for PBXNativeTarget "Open OrbitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC9AC26426A2AA0E002EFBD9 /* Debug */,
+				EC9AC26526A2AA0E002EFBD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EC2011A7294BC4120017188F /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		EC2011AA294BC4480017188F /* XCRemoteSwiftPackageReference "swift-numerics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-numerics.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		EC2011B1294BC4760017188F /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		EC2011B8294BC4B70017188F /* XCRemoteSwiftPackageReference "SwiftCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftcsv/SwiftCSV.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.1;
+			};
+		};
+		EC4EDB3E29AB5051000A899D /* XCRemoteSwiftPackageReference "swift-celmek" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorrden/swift-celmek";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		EC4EDB5029AE7FDB000A899D /* XCRemoteSwiftPackageReference "swift-sim" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:lorrden/swift-sim.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EC2011A8294BC4120017188F /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC2011A7294BC4120017188F /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		EC2011AB294BC4480017188F /* ComplexModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC2011AA294BC4480017188F /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = ComplexModule;
+		};
+		EC2011AD294BC4480017188F /* Numerics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC2011AA294BC4480017188F /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = Numerics;
+		};
+		EC2011AF294BC4480017188F /* RealModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC2011AA294BC4480017188F /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = RealModule;
+		};
+		EC2011B2294BC4760017188F /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC2011B1294BC4760017188F /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		EC2011B4294BC4760017188F /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC2011B1294BC4760017188F /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+		EC2011B6294BC4760017188F /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC2011B1294BC4760017188F /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+		EC2011B9294BC4B70017188F /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC2011B8294BC4B70017188F /* XCRemoteSwiftPackageReference "SwiftCSV" */;
+			productName = SwiftCSV;
+		};
+		EC4EDB3F29AB5051000A899D /* CelMek */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC4EDB3E29AB5051000A899D /* XCRemoteSwiftPackageReference "swift-celmek" */;
+			productName = CelMek;
+		};
+		EC4EDB5129AE7FDB000A899D /* Sim */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC4EDB5029AE7FDB000A899D /* XCRemoteSwiftPackageReference "swift-sim" */;
+			productName = Sim;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = EC9AC22D26A2AA0D002EFBD9 /* Project object */;
+}
