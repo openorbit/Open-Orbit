@@ -1,0 +1,31 @@
+= Open Orbit
+
+_An open source interactive spacecraft simulator._
+
+Open Orbit is a free realistic and modular spacecraft simulator. The purpose is
+to let the user experience orbital space flight in a realistic manner.
+
+The package that this _README_ is part of is the source distribution, this
+_README_ will give you pointers to where you find manuals, build instructions,
+documentation and so forth.
+
+== Background
+
+A long time ago, the Open Orbit project was started.
+Aiming to be an Open Source multi-platform implementation (in pure C) of something like
+https://github.com/orbitersim/orbiter[Orbiter].
+As thing go, life happened and progress halted at some point.
+In addition, Orbiter is now Open Source.
+
+This is a re-imaging of the project in Swift instead of C.
+It utilize Apple frameworks where possible (e.g. SceneKit),
+to avoid having to re-implement the wheel.
+Which was one of the main problems with the C-version.
+E.g. no rigid body dynamics or scenegraph implementations needed here...
+
+In addition, the project builds on two companion libraries:
+
+swift-sim:: An SMP inspired simulator framework in Swift.
+swift-celmek:: A reimplementation of the celmek library in Swift,
+  but this package scope is larger than celmek library in C.
+
