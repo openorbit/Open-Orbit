@@ -60,12 +60,12 @@ class OpenOrbit {
 
     let booster = scene.rootNode.childNode(withName: "jupiterc_c", recursively: true)!
 
-    scene.background.contents = [NSImage(imageLiteralResourceName:"eso0932a_right"),
-                                 NSImage(imageLiteralResourceName:"eso0932a_left"),
-                                 NSImage(imageLiteralResourceName:"eso0932a_top"),
-                                 NSImage(imageLiteralResourceName:"eso0932a_bottom"),
-                                 NSImage(imageLiteralResourceName:"eso0932a_front"),
-                                 NSImage(imageLiteralResourceName:"eso0932a_back")]
+    scene.background.contents = [NSImage(imageLiteralResourceName:"eso0932a_nx"),
+                                 NSImage(imageLiteralResourceName:"eso0932a_px"),
+                                 NSImage(imageLiteralResourceName:"eso0932a_py"),
+                                 NSImage(imageLiteralResourceName:"eso0932a_ny"),
+                                 NSImage(imageLiteralResourceName:"eso0932a_nz"),
+                                 NSImage(imageLiteralResourceName:"eso0932a_pz")]
   }
 
   func printNode(node: SCNNode, indent: Int) {
