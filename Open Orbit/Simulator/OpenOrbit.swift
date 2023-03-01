@@ -117,10 +117,13 @@ class OpenOrbit {
     currentSpacecraft?.toggleEngine()
   }
 
-  var lastRun : TimeInterval = 0
+  var lastRun : TimeInterval = TimeInterval.nan
   func advance(time: TimeInterval) {
-    let delta = time - lastRun
-    let nanos = Int(delta/1000000000.0)
-    sim.run(for: nanos)
+    if !lastRun.isNaN {
+      let delta = time - lastRun
+      let nanos = Int(delta*1e9)
+      sim.run(for: nanos)
+    }
+    lastRun = time
   }
 }
