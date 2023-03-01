@@ -2,7 +2,7 @@
 
 == Sources
 
-Sources are currently under GPL 3.0.
+Sources are currently under link:gpl-3.0.txt[GPL 3.0].
 
 == Dependencies
 
