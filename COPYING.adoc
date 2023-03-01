@@ -31,17 +31,21 @@ been retouched in order to clean up incomplete mapping data.
 | venus.jpg | http://maps.jpl.nasa.gov/
 | earth.jpg | http://visibleearth.nasa.gov/view_rec.php?id=1438
 | earth-night.jpg | http://earthobservatory.nasa.gov/Features/BlueMarble/BlueMarble_monthlies.php
-| moon.jpg | http://www.mapaplanet.org/
-| mars.jpg | http://www.mapaplanet.org/
+| moon.jpg | Map a Planet
+| mars.jpg | Map a Planet
 | jupiter.jpg | http://saturn.jpl.nasa.gov/
-| io.jpg | http://www.mapaplanet.org/
+| io.jpg | Map a Planet
 | titan.jpg | http://maps.jpl.nasa.gov/
 | neptune.jpg | http://maps.jpl.nasa.gov/
 | saturn.jpg | http://maps.jpl.nasa.gov/
-| ganymede.jpg | http://www.mapaplanet.org/
-| europa.jpg | http://www.mapaplanet.org/
+| ganymede.jpg | Map a Planet
+| europa.jpg | Map a Planet
 | uranus.jpg | Custom made based on colors from Hubble photos of Uranus. Image created by Mattias Holm, it is in the public domain.
+| eso0932a | https://www.eso.org/public/images/eso0932a/ converted to cube.
+  Cube conversion from this repository: https://github.com/dmojdehi/SwiftGlobe
 |===
+
+=== NASA and JPL
 
 Usage policy of images are located at these sites:
 
@@ -49,7 +53,11 @@ Usage policy of images are located at these sites:
 * http://visibleearth.nasa.gov/useterms.php
 * http://earthobservatory.nasa.gov/ImageUse/
 
-Maps from mapaplanet:
+=== Map a Planet / USGS Astrogeology Science Center
+
+* Used to be available at: http://www.mapaplanet.org/
+* https://www.usgs.gov/special-topics/planetary-geologic-mapping/interactive-planetary-maps
+
 Courtesy USGS Astrogeology Science Center
 
 * http://astrogeology.usgs.gov
