@@ -21,8 +21,10 @@ class LiquidRocket : Actuator, Steppable {
     maxThrust = thrust
     super.init(name: name, at:pos, dir: normalize(thrust))
 
-    scene = SCNScene(named: "art.scnassets/rocket-plume.scn")!
-    object = scene.rootNode
+    let scene = SCNScene(named: "art.scnassets/rocket-plume.scn")!
+    for node in scene.rootNode.childNodes {
+      addObjectToScene(object: node)
+    }
     object.name = "plume"
   }
 

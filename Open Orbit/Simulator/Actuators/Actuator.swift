@@ -54,7 +54,6 @@ class Actuator : Model {
   var pos: SIMD3<Double>
   var dir: SIMD3<Double>
 
-  var scene: SCNScene
   var object: SCNNode {
     didSet {
       let t = SIMD3<Float>(Float(pos.x), Float(pos.y), Float(pos.z))
@@ -65,13 +64,12 @@ class Actuator : Model {
   init(name: String, at pos: SIMD3<Double>, dir: SIMD3<Double>) {
     self.pos = pos
     self.dir = dir
-    scene = SCNScene()
-    object = scene.rootNode
+    object = SCNNode()
     super.init(name: name)
   }
 
   func addObjectToScene(object: SCNNode) {
-    scene.rootNode.addChildNode(object)
+    self.object.addChildNode(object)
   }
 }
 

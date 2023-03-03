@@ -40,15 +40,18 @@ class CommandModule : Stage {
   override init(name: String, at pos: SIMD3<Double>) {
     super.init(name: name, at: pos)
 
-    scene = SCNScene(named: "art.scnassets/mercury.dae")!
-    object = scene.rootNode.childNode(withName: "freedom7", recursively: true)!
-    body = SCNPhysicsBody(type: SCNPhysicsBodyType.dynamic,
-                          shape: SCNPhysicsShape(geometry: SCNCone(topRadius: 0.6/2.0,
+    let scene = SCNScene(named: "art.scnassets/mercury.dae")!
+    for node in scene.rootNode.childNodes {
+      addObjectToScene(object: node)
+    }
+    self.body = SCNPhysicsBody(type: SCNPhysicsBodyType.dynamic,
+                          shape: SCNPhysicsShape(geometry: SCNCone(topRadius: 0.0,//0.6/2.0,
                                                                    bottomRadius: 1.8/2.0,
                                                                    height: 3.3)))
-    body.mass = 1354.0
-    // body.momentOfInertia = SCNVector3(1.2188583333, 0.39605, 1.2188583333)
+    self.body.isAffectedByGravity = true
+    object.physicsBody = body
     mass = 1354.0
+
     try! add(child: Thruster(name: "Posigrade",
                              at: SIMD3<Double>(0.0,0.0,0.0),
                              dir: SIMD3<Double>(0.0,0.0,-1.8e3)))
@@ -82,24 +85,34 @@ class CommandModule : Stage {
     try! add(child: Thruster(name: "Yaw 1",
                              at: SIMD3<Double>(-0.41, 2.20, 0.00),
                              dir: SIMD3<Double>(108.0, 0.0,0.0)))
+    // animate the 3d object
+    //object.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 0.1, z: 0, duration: 1)))
+
   }
 }
 class Redstone : Stage {
   override init(name: String, at pos: SIMD3<Double>) {
     super.init(name: name, at: pos)
 
-    scene = SCNScene(named: "art.scnassets/redstone.dae")!
-    object = scene.rootNode.childNode(withName: "jupiterc_c", recursively: true)!
-    body = SCNPhysicsBody(type:SCNPhysicsBodyType.dynamic,
+    let scene = SCNScene(named: "art.scnassets/redstone.dae")!
+    for node in scene.rootNode.childNodes {
+      addObjectToScene(object: node)
+    }
+
+    self.body = SCNPhysicsBody(type:SCNPhysicsBodyType.dynamic,
         shape: SCNPhysicsShape(geometry: SCNCylinder(radius: 1.78/2, height: 25.41)))
+    self.body.isAffectedByGravity = true
+    object.physicsBody = body
     // Default calculated from body
     // body.momentOfInertia = SCNVector3(27.14764852, 0.39605, 27.14764852);
-    body.mass = 24000.0 + 2200.0
-    mass = 4400.0 // Empty mass
+    mass = 24000.0 + 2200.0
+    emptyMass = 4400.0 // Empty mass
 
     try! add(child: LiquidRocket(name: "Rocketdyne A7",
                                  at: SIMD3<Double>(0.0,0.0,0.0),
                                  thrust: SIMD3<Double>(0.0,0.0,-370.0e3)))
+    // animate the 3d object
+    // object.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 0.1, z: 0, duration: 1)))
   }
   override func connect() {
     let rdyne = sim.resolver.resolve(relative: "Rocketdyne A7", source: self) as? Actuator
@@ -114,7 +127,7 @@ class Mercury : Spacecraft {
   var detatchIsPossible: Bool = true
   var redstone: Stage! = nil
   var capsule: Stage! = nil
-
+  var connector: SCNPhysicsSliderJoint! = nil
   override init(name: String) {
     super.init(name: name)
     try! add(child: Redstone(name: "Mercury-Redstone", at: SIMD3<Double>(0.0, 0.0, 0.0)))
@@ -144,10 +157,19 @@ class Mercury : Spacecraft {
     redstone = sim.resolver.resolve(relative: "Mercury-Redstone", source: self) as? Stage
     stages.append(capsule!)
     stages.append(redstone!)
+
+    connector = SCNPhysicsSliderJoint(
+      bodyA: capsule.body,
+      axisA: SCNVector3(x: 0, y: 0, z: 0),
+      anchorA: SCNVector3(x: 0, y: 0, z: 0),
+      bodyB: redstone.body,
+      axisB: SCNVector3(x: 0, y: 0, z: 0),
+      anchorB: SCNVector3(x: 0, y: 0, z: 0)
+    )
   }
   override func toggleEngine() {
     for engine in redstone.engines {
-      engine.scene.rootNode.isHidden = !engine.scene.rootNode.isHidden
+      engine.object.isHidden = !engine.object.isHidden
     }
   }
  /*

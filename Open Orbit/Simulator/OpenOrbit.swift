@@ -10,7 +10,7 @@ import SceneKit
 import Sim
 
 class OpenOrbit {
-  var scene: SCNScene!
+  var scene: SCNScene
 
   var time: Double = 2451544.50000 // 2000-01-01 00:00:00
   var sim = SimulatorImpl() as Simulator
@@ -26,10 +26,7 @@ class OpenOrbit {
     currentSpacecraft = sim.getRootModel(name: "Mercury") as? Spacecraft
 
     for stage in currentSpacecraft!.stages {
-      addObjectToScene(object: stage.scene.rootNode)
-    }
-    for stage in currentSpacecraft!.stages {
-      stage.printScene()
+      addObjectToScene(object: stage.object)
     }
     // create and add a camera to the scene
     let cameraNode = SCNNode()
@@ -53,12 +50,6 @@ class OpenOrbit {
     ambientLightNode.light!.color = NSColor.darkGray
     scene.rootNode.addChildNode(ambientLightNode)
 
-    // retrieve the ship node
-    let capsule = scene.rootNode.childNode(withName: "freedom7", recursively: true)!
-    // animate the 3d object
-    capsule.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 0.1, z: 0, duration: 1)))
-
-    let booster = scene.rootNode.childNode(withName: "jupiterc_c", recursively: true)!
 
     scene.background.contents = [NSImage(imageLiteralResourceName:"eso0932a_nx"),
                                  NSImage(imageLiteralResourceName:"eso0932a_px"),
@@ -66,6 +57,9 @@ class OpenOrbit {
                                  NSImage(imageLiteralResourceName:"eso0932a_ny"),
                                  NSImage(imageLiteralResourceName:"eso0932a_nz"),
                                  NSImage(imageLiteralResourceName:"eso0932a_pz")]
+    scene.physicsWorld.gravity = SCNVector3(x: 0, y: 0, z: 0)
+
+    printScene()
   }
 
   func printNode(node: SCNNode, indent: Int) {
@@ -75,10 +69,12 @@ class OpenOrbit {
 
     let nodeType = type(of: node)
     let typeString = String(describing: nodeType)
+    let hasPhysics = node.physicsBody != nil
+    let mass = node.physicsBody?.mass ?? 0.0
     if let name = node.name {
-      print("node name: \(name) : \(typeString)")
+      print("node name: \(name) : \(typeString) (\(hasPhysics) \(mass) kg)")
     } else {
-      print("node: \(typeString)")
+      print("node: \(typeString) (\(hasPhysics) \(mass) kg)")
     }
     for n in node.childNodes {
       printNode(node: n, indent: indent + 2)
@@ -88,10 +84,13 @@ class OpenOrbit {
     let nodeType = type(of: scene.rootNode)
     let typeString = String(describing: nodeType)
 
+    let hasPhysics = scene.rootNode.physicsBody != nil
+    let mass = scene.rootNode.physicsBody?.mass ?? 0.0
+
     if let name = scene.rootNode.name {
-      print("root name: \(name) : \(nodeType)")
+      print("root name: \(name) : \(typeString) (\(hasPhysics) \(mass) kg)")
     } else {
-      print("root : \(nodeType)")
+      print("root : \(nodeType) (\(hasPhysics) \(mass) kg)")
     }
 
     for node in scene.rootNode.childNodes {
@@ -106,6 +105,7 @@ class OpenOrbit {
   }
 
   func addObjectToScene(object: SCNNode) {
+    print("add \(String(describing: object.name)) \(object.position)")
     scene.rootNode.addChildNode(object)
   }
 

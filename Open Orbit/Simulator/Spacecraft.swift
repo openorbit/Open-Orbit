@@ -28,21 +28,34 @@ enum StageState {
 
 class Stage : Model {
   //var sc: Spacecraft;
-  var scene: SCNScene
 
   var object: SCNNode {
     didSet {
       let t = SIMD3<Float>(Float(pos.x), Float(pos.y), Float(pos.z))
-      object.simdLocalTranslate(by: t)
+      object.simdPosition = t
     }
   }
 
-  var pos: SIMD3<Double>
+  var pos: SIMD3<Double> {
+    didSet {
+      let t = SIMD3<Float>(Float(pos.x), Float(pos.y), Float(pos.z))
+      object.simdPosition = t
+    }
+  }
+
   var expendedMass: Double = 0.0
   var state: StageState = .SIM_STAGE_IDLE
-  var body: SCNPhysicsBody
+  var body: SCNPhysicsBody {
+    didSet {
+      object.physicsBody = body
+    }
+  }
   var emptyMass: Double = 0.0
-  var mass: Double = 0.0
+  var mass: Double = 0.0 {
+    didSet {
+      body.mass = mass
+    }
+  }
 
   //pl_object_t *obj; // Mass and inertia tensor of stage, unit is kg
   //  obj_array_t actuators;
@@ -56,8 +69,12 @@ class Stage : Model {
   init(name: String, at pos:SIMD3<Double>) {
     self.pos = pos
     self.body = SCNPhysicsBody()
-    self.scene = SCNScene()
-    self.object = self.scene.rootNode
+    self.object = SCNNode()
+    self.object.name = name
+    let posf = SIMD3<Float>(x: Float(pos.x),
+                            y: Float(pos.y),
+                            z: Float(pos.z))
+    self.object.simdPosition = posf
     super.init(name: name)
   }
 
@@ -68,7 +85,7 @@ class Stage : Model {
   }
 
   func addObjectToScene(object: SCNNode) {
-    scene.rootNode.addChildNode(object)
+    self.object.addChildNode(object)
   }
 
   func printNode(node: SCNNode, indent: Int) {
@@ -88,25 +105,24 @@ class Stage : Model {
     }
   }
   func printScene() {
-    let nodeType = type(of: scene.rootNode)
+    let nodeType = type(of: object)
     let typeString = String(describing: nodeType)
 
-    if let name = scene.rootNode.name {
-      print("root name: \(name) : \(nodeType)")
+    if let name = object.name {
+      print("root name: \(name) : \(typeString)")
     } else {
       print("root : \(nodeType)")
     }
 
-    for node in scene.rootNode.childNodes {
+    for node in object.childNodes {
       printNode(node: node, indent: 2)
     }
   }
-
 }
 
 class Spacecraft : Model {
   var stages: [Stage] = []
-
+  var stageJoints: [SCNPhysicsSliderJoint] = []
   override init(name: String) {
     super.init(name: name)
   }
