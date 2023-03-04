@@ -37,6 +37,8 @@ enum DetachSequence : Int {
 }
 
 class CommandModule : Stage {
+  var retro : [SolidRocketEngine] = []
+
   override init(name: String, at pos: SIMD3<Double>) {
     super.init(name: name, at: pos)
 
@@ -87,7 +89,22 @@ class CommandModule : Stage {
                              dir: SIMD3<Double>(108.0, 0.0,0.0)))
     // animate the 3d object
     //object.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 0.1, z: 0, duration: 1)))
+  }
 
+  override func connect() {
+    retro.append(sim.resolver.resolve(relative: "Retro 0", source: self) as! SolidRocketEngine)
+    retro.append(sim.resolver.resolve(relative: "Retro 1", source: self) as! SolidRocketEngine)
+    retro.append(sim.resolver.resolve(relative: "Retro 2", source: self) as! SolidRocketEngine)
+
+    pitchThrusters.append(sim.resolver.resolve(relative: "Pitch 0", source: self) as! Thruster)
+    pitchThrusters.append(sim.resolver.resolve(relative: "Pitch 1", source: self) as! Thruster)
+
+    rollThrusters.append(sim.resolver.resolve(relative: "Roll 0", source: self) as! Thruster)
+    rollThrusters.append(sim.resolver.resolve(relative: "Roll 1", source: self) as! Thruster)
+
+    yawThrusters.append(sim.resolver.resolve(relative: "Yaw 0", source: self) as! Thruster)
+    yawThrusters.append(sim.resolver.resolve(relative: "Yaw 1", source: self) as! Thruster)
+    super.connect()
   }
 }
 class Redstone : Stage {

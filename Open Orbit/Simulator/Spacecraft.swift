@@ -60,10 +60,13 @@ class Stage : Model {
   //pl_object_t *obj; // Mass and inertia tensor of stage, unit is kg
   //  obj_array_t actuators;
     
-  var engines: [Actuator] = [Actuator]()
-  var actuatorGroups: [ActuatorGroup] = [ActuatorGroup]()
-  var payload: [Payload] = [Payload]()
-  var propellantTanks: [PropellantTank] = [PropellantTank]()
+  var engines: [Actuator] = []
+  var pitchThrusters: [Actuator] = []
+  var rollThrusters: [Actuator] = []
+  var yawThrusters: [Actuator] = []
+  var actuatorGroups: [ActuatorGroup] = []
+  var payload: [Payload] = []
+  var propellantTanks: [PropellantTank] = []
   //sg_object_t *sgobj;
     
   init(name: String, at pos:SIMD3<Double>) {

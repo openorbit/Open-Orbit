@@ -26,6 +26,7 @@ class LiquidRocket : Actuator, Steppable {
       addObjectToScene(object: node)
     }
     object.name = "plume"
+    object.localRotate(by: SCNQuaternion(x: dir.x, y: dir.y, z: dir.z, w: 0.0))
   }
 
   func step(dt: Double) {
