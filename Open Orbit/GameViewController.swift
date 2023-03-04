@@ -19,18 +19,34 @@ enum KeyCode : UInt16 {
   case i = 34
   case o = 31
   case p = 35
+  case f = 3
+  case g = 5
+  case h = 4
+  case j = 38
+  case k = 40
+  case l = 37
+  case z = 6
+  case x = 7
+  case c = 8
+  case v = 9
+  case b = 11
+  case n = 45
+  case m = 46
 }
 
 class GameViewController: NSViewController, SCNSceneRendererDelegate {
   var orbit: OpenOrbit!
-
+  var scnView : SCNView {
+    get {
+      self.view as! SCNView
+    }
+  }
   override func viewDidLoad() {
     super.viewDidLoad()
 
     orbit = OpenOrbit()
 
     // retrieve the SCNView
-    let scnView = self.view as! SCNView
     scnView.delegate = self
     // set the scene to the view
     scnView.scene = orbit.scene
@@ -99,6 +115,23 @@ class GameViewController: NSViewController, SCNSceneRendererDelegate {
       orbit.toggleICRFGrid()
     case KeyCode.e.rawValue:
       orbit.toggleEngine()
+    case KeyCode.c.rawValue:
+      let img = scnView.snapshot()
+      let urlPath = URL(filePath: NSSearchPathForDirectoriesInDomains(
+        .picturesDirectory,
+        .userDomainMask, true).first!)
+      .appending(component: "openorbit.png")
+
+      let imageData = img.tiffRepresentation!
+      let imageRep = NSBitmapImageRep(data: imageData)
+      let pngData = imageRep?.representation(using: .png, properties: [:])
+      do {
+        try pngData?.write(to: urlPath)
+      } catch {
+        let alert = NSAlert(error: error)
+        alert.alertStyle = .warning
+        alert.beginSheetModal(for: self.view.window!)
+      }
     default:
       print("pressed \(event.keyCode)")
     }
