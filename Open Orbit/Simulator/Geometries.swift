@@ -9,25 +9,52 @@ import SceneKit
 
 func createAxisNode() -> SCNNode {
   let axises = SCNNode()
-  let xAxis = SCNNode(geometry: SCNCylinder(radius: 0.1, height: 5.0))
-  let yAxis = SCNNode(geometry: SCNCylinder(radius: 0.1, height: 5.0))
-  let zAxis = SCNNode(geometry: SCNCylinder(radius: 0.1, height: 5.0))
-  xAxis.geometry?.firstMaterial?.diffuse.contents = NSColor.red
-  yAxis.geometry?.firstMaterial?.diffuse.contents = NSColor.green
-  zAxis.geometry?.firstMaterial?.diffuse.contents = NSColor.blue
 
+  let xAxis = SCNNode(geometry: SCNCylinder(radius: 0.1, height: 5.0))
+  xAxis.geometry?.firstMaterial?.diffuse.contents = NSColor.red
   xAxis.localTranslate(by: SCNVector3(x: 2.5, y: 0, z: 0))
-  yAxis.localTranslate(by: SCNVector3(x: 0, y: 2.5, z: 0))
-  zAxis.localTranslate(by: SCNVector3(x: 0, y: 0, z: 2.5))
   xAxis.eulerAngles = SCNVector3(x: 90 * .pi / 180.0, y: 90 * .pi / 180.0, z: 0)
+
+  let xLabel = SCNNode(geometry: SCNText(string: "X", extrusionDepth: 0.1))
+  xLabel.localTranslate(by: SCNVector3(x: -0.25, y: 3, z: 0))
+  xLabel.constraints = [SCNBillboardConstraint()]
+  xLabel.geometry?.firstMaterial?.diffuse.contents = NSColor.red
+  xLabel.scale = SCNVector3(0.025, 0.025, 0.025)
+
+  xAxis.addChildNode(xLabel)
+  axises.addChildNode(xAxis)
+
+  let yAxis = SCNNode(geometry: SCNCylinder(radius: 0.1, height: 5.0))
+  yAxis.geometry?.firstMaterial?.diffuse.contents = NSColor.green
+  yAxis.localTranslate(by: SCNVector3(x: 0, y: 2.5, z: 0))
   yAxis.eulerAngles = SCNVector3(x: 0, y: 0, z: 0)
+
+  let yLabel = SCNNode(geometry: SCNText(string: "Y", extrusionDepth: 0.1))
+  yLabel.localTranslate(by: SCNVector3(x: -0.25, y: 3, z: 0))
+  yLabel.constraints = [SCNBillboardConstraint()]
+  yLabel.geometry?.firstMaterial?.diffuse.contents = NSColor.green
+  yLabel.scale = SCNVector3(0.025, 0.025, 0.025)
+
+  yAxis.addChildNode(yLabel)
+  axises.addChildNode(yAxis)
+
+  let zAxis = SCNNode(geometry: SCNCylinder(radius: 0.1, height: 5.0))
+  zAxis.geometry?.firstMaterial?.diffuse.contents = NSColor.blue
+  zAxis.localTranslate(by: SCNVector3(x: 0, y: 0, z: 2.5))
   zAxis.eulerAngles = SCNVector3(x:  90 * .pi / 180.0, y: 0, z: 0)
+
+  let zLabel = SCNNode(geometry: SCNText(string: "Z", extrusionDepth: 0.1))
+  zLabel.localTranslate(by: SCNVector3(x: -0.25, y: 3, z: 0))
+  zLabel.constraints = [SCNBillboardConstraint()]
+  zLabel.geometry?.firstMaterial?.diffuse.contents = NSColor.blue
+  zLabel.scale = SCNVector3(0.025, 0.025, 0.025)
+
+  zAxis.addChildNode(zLabel)
+  axises.addChildNode(zAxis)
 
   let centerSphere = SCNNode(geometry: SCNSphere(radius: 0.2))
   centerSphere.geometry?.firstMaterial?.diffuse.contents = NSColor.cyan
-  axises.addChildNode(xAxis)
-  axises.addChildNode(yAxis)
-  axises.addChildNode(zAxis)
   axises.addChildNode(centerSphere)
+
   return axises
 }
