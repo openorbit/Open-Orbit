@@ -85,6 +85,18 @@ class Stage : Model {
     for actuator in engines {
       addObjectToScene(object: actuator.object)
     }
+
+    for actuator in pitchThrusters {
+      addObjectToScene(object: actuator.object)
+    }
+    for actuator in yawThrusters {
+      addObjectToScene(object: actuator.object)
+    }
+    for actuator in rollThrusters {
+      addObjectToScene(object: actuator.object)
+    }
+
+    addObjectToScene(object: createAxisNode())
   }
 
   func addObjectToScene(object: SCNNode) {

@@ -61,13 +61,13 @@ class CommandModule : Stage {
     // Ripple fire 10 s burntime each
     try! add(child: SolidRocketEngine(name: "Retro 0",
                                       at: SIMD3<Double>(0.0,0.0,0.0),
-                                      dir: SIMD3<Double>(0.0,0.0,0.0)))
+                                      dir: SIMD3<Double>(0.0,-1.0,0.0)))
     try! add(child: SolidRocketEngine(name: "Retro 1",
                                       at: SIMD3<Double>(0.0,0.0,0.0),
-                                      dir: SIMD3<Double>(0.0,0.0,0.0)))
+                                      dir: SIMD3<Double>(0.0,-1.0,0.0)))
     try! add(child: SolidRocketEngine(name: "Retro 2",
                                       at: SIMD3<Double>(0.0,0.0,0.0),
-                                      dir: SIMD3<Double>(0.0,0.0,0.0)))
+                                      dir: SIMD3<Double>(0.0,-1.0,0.0)))
 
     try! add(child: Thruster(name: "Roll 0",
                              at: SIMD3<Double>(0.82, 0.55, 0.00),
@@ -87,8 +87,6 @@ class CommandModule : Stage {
     try! add(child: Thruster(name: "Yaw 1",
                              at: SIMD3<Double>(-0.41, 2.20, 0.00),
                              dir: SIMD3<Double>(108.0, 0.0,0.0)))
-    // animate the 3d object
-    //object.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 0.1, z: 0, duration: 1)))
   }
 
   override func connect() {
@@ -104,6 +102,11 @@ class CommandModule : Stage {
 
     yawThrusters.append(sim.resolver.resolve(relative: "Yaw 0", source: self) as! Thruster)
     yawThrusters.append(sim.resolver.resolve(relative: "Yaw 1", source: self) as! Thruster)
+
+    engines.append(retro[0])
+    engines.append(retro[1])
+    engines.append(retro[2])
+
     super.connect()
   }
 }

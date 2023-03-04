@@ -23,6 +23,7 @@
 		EC73CF4026C8E4AE0024C0A5 /* VectorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3F26C8E4AE0024C0A5 /* VectorExtensions.swift */; };
 		EC73CF4126C8E4AE0024C0A5 /* VectorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3F26C8E4AE0024C0A5 /* VectorExtensions.swift */; };
 		EC73CF4226C8E4AE0024C0A5 /* VectorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3F26C8E4AE0024C0A5 /* VectorExtensions.swift */; };
+		EC789B8729B356CB00DC85EC /* Geometries.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC789B8629B356CB00DC85EC /* Geometries.swift */; };
 		EC9716E426CF74420041FBF5 /* ReferenceFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9716E326CF74420041FBF5 /* ReferenceFrame.swift */; };
 		EC9716E526CF74420041FBF5 /* ReferenceFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9716E326CF74420041FBF5 /* ReferenceFrame.swift */; };
 		EC9716E726CF745C0041FBF5 /* SolarPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9716E626CF745C0041FBF5 /* SolarPanel.swift */; };
@@ -86,6 +87,7 @@
 		EC4EDB5429AF1874000A899D /* README.adoc */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.adoc; sourceTree = "<group>"; };
 		EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steppable.swift; sourceTree = "<group>"; };
 		EC73CF3F26C8E4AE0024C0A5 /* VectorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorExtensions.swift; sourceTree = "<group>"; };
+		EC789B8629B356CB00DC85EC /* Geometries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometries.swift; sourceTree = "<group>"; };
 		EC9716E326CF74420041FBF5 /* ReferenceFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceFrame.swift; sourceTree = "<group>"; };
 		EC9716E626CF745C0041FBF5 /* SolarPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarPanel.swift; sourceTree = "<group>"; };
 		EC9AC23526A2AA0D002EFBD9 /* Open Orbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Open Orbit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +233,7 @@
 				EC9AC28226A2C65B002EFBD9 /* OpenOrbit.swift */,
 				EC9716E326CF74420041FBF5 /* ReferenceFrame.swift */,
 				ECF36F032945AB6B000600A8 /* Planet.swift */,
+				EC789B8629B356CB00DC85EC /* Geometries.swift */,
 			);
 			path = Simulator;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC789B8729B356CB00DC85EC /* Geometries.swift in Sources */,
 				ECF36EFE2945AA51000600A8 /* SolidRocket.swift in Sources */,
 				EC9716E726CF745C0041FBF5 /* SolarPanel.swift in Sources */,
 				EC9AC28026A2B877002EFBD9 /* Battery.swift in Sources */,
