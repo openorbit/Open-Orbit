@@ -114,5 +114,8 @@ func createICRFGridNode() -> SCNNode {
   let geometry = SCNGeometry(sources: [source], elements: [element])
   let grid = SCNNode(geometry: geometry)
   grid.geometry?.firstMaterial?.diffuse.contents = NSColor.green
+  grid.renderingOrder = 1
+  grid.geometry?.firstMaterial?.readsFromDepthBuffer = false
+  grid.geometry?.firstMaterial?.writesToDepthBuffer = false
   return grid;
 }
