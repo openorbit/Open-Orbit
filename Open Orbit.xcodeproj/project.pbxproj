@@ -876,7 +876,7 @@
 		};
 		ECEFC0A029B8A36500DB8D94 /* XCRemoteSwiftPackageReference "swift-sim" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com:lorrden/swift-sim.git";
+			repositoryURL = "https://github.com/lorrden/swift-sim.git";
 			requirement = {
 				branch = main;
 				kind = branch;
