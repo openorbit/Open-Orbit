@@ -19,6 +19,9 @@ enum KeyCode : UInt16 {
   case i = 34
   case o = 31
   case p = 35
+  case a = 0
+  case s = 1
+  case d = 2
   case f = 3
   case g = 5
   case h = 4
@@ -32,6 +35,33 @@ enum KeyCode : UInt16 {
   case b = 11
   case n = 45
   case m = 46
+
+  case up = 126
+  case down = 125
+  case left = 123
+  case right = 124
+
+  case semi = 41
+  case quote = 39
+  case backslash = 42
+  case leftbrack = 33
+  case rightbrack = 30
+  case comma = 43
+  case period = 47
+  case slash = 44
+  case paragraph = 10
+  case key_1 = 18
+  case key_2 = 19
+  case key_3 = 20
+  case key_4 = 21
+  case key_5 = 23
+  case key_6 = 22
+  case key_7 = 26
+  case key_8 = 28
+  case key_9 = 25
+  case key_0 = 29
+  case key_minus = 27
+  case key_equals = 24
 }
 
 class GameViewController: NSViewController, SCNSceneRendererDelegate {
@@ -52,11 +82,11 @@ class GameViewController: NSViewController, SCNSceneRendererDelegate {
     scnView.scene = orbit.scene
 
     // Camera control settings
-    scnView.allowsCameraControl = true
-    scnView.cameraControlConfiguration.allowsTranslation = true
-    scnView.cameraControlConfiguration.autoSwitchToFreeCamera = true
-    scnView.cameraControlConfiguration.flyModeVelocity = 4.0
-    scnView.defaultCameraController.interactionMode = .fly
+    //scnView.allowsCameraControl = true
+    //scnView.cameraControlConfiguration.allowsTranslation = false
+    //scnView.cameraControlConfiguration.autoSwitchToFreeCamera = true
+    //scnView.cameraControlConfiguration.flyModeVelocity = 4.0
+    //scnView.defaultCameraController.interactionMode = .orbitTurntable
 
     // show statistics such as fps and timing information
     scnView.showsStatistics = true
@@ -64,18 +94,30 @@ class GameViewController: NSViewController, SCNSceneRendererDelegate {
     scnView.backgroundColor = NSColor.black
 
     // Add a click gesture recognizer
-    let clickGesture = NSClickGestureRecognizer(target: self, action: #selector(handleClick(_:)))
     var gestureRecognizers = scnView.gestureRecognizers
+    let dragGesture = NSPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+    let clickGesture = NSClickGestureRecognizer(target: self, action: #selector(handleClick(_:)))
+    let zoomGesture = NSMagnificationGestureRecognizer(target: self, action: #selector(handleZoom(_:)))
     gestureRecognizers.insert(clickGesture, at: 0)
+    gestureRecognizers.insert(dragGesture, at: 1)
+    gestureRecognizers.insert(zoomGesture, at: 2)
     scnView.gestureRecognizers = gestureRecognizers
+
   }
 
   @objc
-  func handleClick(_ gestureRecognizer: NSGestureRecognizer) {
-    // retrieve the SCNView
-    let scnView = self.view as! SCNView
-
-    // check what nodes are clicked
+  func handlePan(_ gestureRecognizer: NSPanGestureRecognizer) {
+    let point = gestureRecognizer.velocity(in: scnView)
+    let vec = SIMD2<Double>(point.x / scnView.bounds.width, point.y / scnView.bounds.height)
+    orbit.camera.pan(relative: vec)
+  }
+  @objc
+  func handleZoom(_ gestureRecognizer: NSMagnificationGestureRecognizer) {
+    orbit.camera.zoom(relative: gestureRecognizer.magnification)
+  }
+  @objc
+  func handleClick(_ gestureRecognizer: NSClickGestureRecognizer) {
+    // Check what nodes are clicked
     let p = gestureRecognizer.location(in: scnView)
     let hitResults = scnView.hitTest(p, options: [:])
     // check that we clicked on at least one object

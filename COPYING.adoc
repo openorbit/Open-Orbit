@@ -60,3 +60,17 @@ Usage policy of images are located at these sites:
 Courtesy USGS Astrogeology Science Center
 
 * http://astrogeology.usgs.gov
+
+== Models
+:nasa-3d-resources: https://nasa3d.arc.nasa.gov[NASA 3D Resources]
+:nasa-3d-usage: https://www.nasa.gov/multimedia/guidelines/index.html[Media Usage Guidelines]
+
+|===
+| Model | Source | Edited | Usage
+
+
+| Mercury | {nasa-3d-resources} | yes | {nasa-3d-usage}
+| Redstone | {nasa-3d-resources} | yes | {nasa-3d-usage}
+|===
+
+

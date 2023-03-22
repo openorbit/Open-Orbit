@@ -11,7 +11,7 @@ import Sim
 
 class OpenOrbit {
   var scene: SCNScene
-
+  var camera: Camera
   var time: Double = 2451544.50000 // 2000-01-01 00:00:00
   var sim = SimulatorImpl() as Simulator
   var stepSize: Double = 0.0
@@ -20,21 +20,22 @@ class OpenOrbit {
   init() {
     scene = SCNScene()
 
+    try! sim.add(model: createSolarSystem(sim: sim))
     try! sim.add(model: Mercury(name: "Mercury"))
     sim.connect()
 
     currentSpacecraft = sim.getRootModel(name: "Mercury") as? Spacecraft
 
+    // create and add a camera to the scene
+    camera = Camera(name: "Camera")
+    scene.rootNode.addChildNode(camera)
+
+    camera.distance = 30
+    camera.look(at: currentSpacecraft!.stages[0].object)
+
     for stage in currentSpacecraft!.stages {
       addObjectToScene(object: stage.object)
     }
-    // create and add a camera to the scene
-    let cameraNode = SCNNode()
-    cameraNode.camera = SCNCamera()
-    scene.rootNode.addChildNode(cameraNode)
-
-    // place the camera
-    cameraNode.position = SCNVector3(x: 0, y: 0, z: 30)
 
     // create and add a light to the scene
     let lightNode = SCNNode()
@@ -49,7 +50,12 @@ class OpenOrbit {
     ambientLightNode.light!.type = .ambient
     ambientLightNode.light!.color = NSColor.darkGray
     scene.rootNode.addChildNode(ambientLightNode)
-
+    let earth = SCNNode()
+    earth.geometry = SCNSphere(radius: 6371e3)
+    earth.geometry?.firstMaterial?.diffuse.contents = NSImage(imageLiteralResourceName: "earth")
+    //earth.geometry?.firstMaterial?.specular.contents = NSImage(imageLiteralResourceName: "earth-spec")
+    earth.worldPosition = SCNVector3(6371e3 * 4, 0, 0)
+    scene.rootNode.addChildNode(earth)
 
     scene.background.contents = [NSImage(imageLiteralResourceName:"eso0932a_nx"),
                                  NSImage(imageLiteralResourceName:"eso0932a_px"),
@@ -58,6 +64,8 @@ class OpenOrbit {
                                  NSImage(imageLiteralResourceName:"eso0932a_nz"),
                                  NSImage(imageLiteralResourceName:"eso0932a_pz")]
     scene.physicsWorld.gravity = SCNVector3(x: 0, y: 0, z: 0)
+
+    camera.addChildNode(createICRFGridNode())
 
     printScene()
   }
@@ -117,13 +125,11 @@ class OpenOrbit {
     currentSpacecraft?.toggleEngine()
   }
 
-  var lastRun : TimeInterval = TimeInterval.nan
+  var timeToRun : TimeInterval? = nil
   func advance(time: TimeInterval) {
-    if !lastRun.isNaN {
-      let delta = time - lastRun
-      let nanos = Int(delta*1e9)
-      sim.run(for: nanos)
-    }
-    lastRun = time
+    timeToRun = timeToRun ?? time
+    let delta = time - timeToRun!
+    let nanos = Int(delta*1e9)
+    sim.run(for: nanos)
   }
 }

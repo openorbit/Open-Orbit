@@ -64,3 +64,55 @@ func createAxisNode() -> SCNNode {
 
   return axises
 }
+
+
+func createICRFGridNode() -> SCNNode {
+
+  var vertices: [SCNVector3] = [
+  ]
+
+  let STACKS = 10
+  let SLICES = 16
+  let az_sz = (2.0 * .pi) / Double(SLICES);
+  let inc_sz = .pi / Double(STACKS);
+
+  // Handle non polar stacks, note that the bottom stack is handled specially
+  for i in 1 ..< STACKS {
+    let inc = Double(i) * .pi / Double(STACKS)
+    for j in 0 ..< SLICES {
+        // For every slice we generate two lines
+      let az = Double(j) * (2.0 * .pi) / Double(SLICES)
+
+      // Line 1 longitude
+      vertices.append(SCNVector3(x: sin(inc) * cos(az),
+                                 y: sin(inc) * sin(az),
+                                 z: cos(inc)))
+      vertices.append(SCNVector3(x: sin(inc) * cos(az+az_sz),
+                                 y: sin(inc) * sin(az+az_sz),
+                                 z: cos(inc)))
+
+      // Line 2 latitude
+      if (i != STACKS - 1) {
+        vertices.append(SCNVector3(x: sin(inc) * cos(az),
+                                   y: sin(inc) * sin(az),
+                                   z: cos(inc)))
+        vertices.append(SCNVector3(x: sin(inc+inc_sz) * cos(az),
+                                   y: sin(inc+inc_sz) * sin(az),
+                                   z: cos(inc+inc_sz)))
+
+      }
+    }
+  }
+
+  let source = SCNGeometrySource(vertices: vertices)
+
+  let element = SCNGeometryElement(data: nil,
+                                   primitiveType: .line,
+                                   primitiveCount: vertices.count/2,
+                                   bytesPerIndex: MemoryLayout<SCNVector3>.stride)
+
+  let geometry = SCNGeometry(sources: [source], elements: [element])
+  let grid = SCNNode(geometry: geometry)
+  grid.geometry?.firstMaterial?.diffuse.contents = NSColor.green
+  return grid;
+}

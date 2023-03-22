@@ -42,7 +42,7 @@ class CommandModule : Stage {
   override init(name: String, at pos: SIMD3<Double>) {
     super.init(name: name, at: pos)
 
-    let scene = SCNScene(named: "art.scnassets/mercury.dae")!
+    let scene = SCNScene(named: "art.scnassets/mercury.scn")!
     for node in scene.rootNode.childNodes {
       addObjectToScene(object: node)
     }
@@ -54,20 +54,20 @@ class CommandModule : Stage {
     object.physicsBody = body
     mass = 1354.0
 
-    try! add(child: Thruster(name: "Posigrade",
-                             at: SIMD3<Double>(0.0,0.0,0.0),
-                             dir: SIMD3<Double>(0.0,0.0,-1.8e3)))
+//    try! add(child: Thruster(name: "Posigrade",
+//                             at: SIMD3<Double>(0.0,0.0,0.0),
+//                             dir: SIMD3<Double>(0.0,0.0,-1.8e3)))
 
     // Ripple fire 10 s burntime each
     try! add(child: SolidRocketEngine(name: "Retro 0",
                                       at: SIMD3<Double>(0.0,0.0,0.0),
-                                      dir: SIMD3<Double>(0.0,-1.0,0.0)))
+                                      dir: SIMD3<Double>(0.0,0.0,-1.0)))
     try! add(child: SolidRocketEngine(name: "Retro 1",
                                       at: SIMD3<Double>(0.0,0.0,0.0),
-                                      dir: SIMD3<Double>(0.0,-1.0,0.0)))
+                                      dir: SIMD3<Double>(0.0,0.0,-1.0)))
     try! add(child: SolidRocketEngine(name: "Retro 2",
                                       at: SIMD3<Double>(0.0,0.0,0.0),
-                                      dir: SIMD3<Double>(0.0,-1.0,0.0)))
+                                      dir: SIMD3<Double>(0.0,0.0,-1.0)))
 
     try! add(child: Thruster(name: "Roll 0",
                              at: SIMD3<Double>(0.82, 0.55, 0.00),
@@ -113,8 +113,7 @@ class CommandModule : Stage {
 class Redstone : Stage {
   override init(name: String, at pos: SIMD3<Double>) {
     super.init(name: name, at: pos)
-
-    let scene = SCNScene(named: "art.scnassets/redstone.dae")!
+    let scene = SCNScene(named: "art.scnassets/redstone.scn")!
     for node in scene.rootNode.childNodes {
       addObjectToScene(object: node)
     }
@@ -128,14 +127,14 @@ class Redstone : Stage {
     mass = 24000.0 + 2200.0
     emptyMass = 4400.0 // Empty mass
 
-    try! add(child: LiquidRocket(name: "Rocketdyne A7",
+    try! add(child: LiquidRocket(name: "Rocketdyne A-7",
                                  at: SIMD3<Double>(0.0,0.0,0.0),
-                                 thrust: SIMD3<Double>(0.0,0.0,-370.0e3)))
+                                 thrust: SIMD3<Double>(0.0,-370.0e3,0.0)))
     // animate the 3d object
     // object.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 0.1, z: 0, duration: 1)))
   }
   override func connect() {
-    let rdyne = sim.resolver.resolve(relative: "Rocketdyne A7", source: self) as? Actuator
+    let rdyne = sim.resolver.resolve(relative: "Rocketdyne A-7", source: self) as? Actuator
     engines.append(rdyne!)
     super.connect()
   }

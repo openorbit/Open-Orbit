@@ -71,6 +71,8 @@ class Actuator : Model {
   func addObjectToScene(object: SCNNode) {
     self.object.addChildNode(object)
   }
+
+
 }
 
 class ActuatorGroup : Model {

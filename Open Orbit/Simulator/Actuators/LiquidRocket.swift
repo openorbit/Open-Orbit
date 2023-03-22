@@ -21,16 +21,22 @@ class LiquidRocket : Actuator, Steppable {
     maxThrust = thrust
     super.init(name: name, at:pos, dir: normalize(thrust))
 
-    let scene = SCNScene(named: "art.scnassets/rocket-plume.scn")!
-    for node in scene.rootNode.childNodes {
-      addObjectToScene(object: node)
-    }
-    object.name = name
-    object.localRotate(by: SCNQuaternion(x: dir.x, y: dir.y, z: dir.z, w: 0.0))
+    //let scene = SCNScene(named: "art.scnassets/rocket-plume.scn")!
+    //for node in scene.rootNode.childNodes {
+    //  addObjectToScene(object: node)
+    //}
+    //object.name = name
+    //object.orientation = SCNQuaternion(x: dir.x, y: dir.y, z: dir.z, w: 0.0)
   }
 
   func step(dt: Double) {
     
+  }
+
+  override func connect() {
+    let parent = sim.resolver.resolve(relative: "../", source: self) as! Stage
+    object = parent.object.childNode(withName: name, recursively: false)!
+    super.connect()
   }
 }
 

@@ -15,8 +15,9 @@
 		EC2011B5294BC4760017188F /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = EC2011B4294BC4760017188F /* DequeModule */; };
 		EC2011B7294BC4760017188F /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = EC2011B6294BC4760017188F /* OrderedCollections */; };
 		EC2011BA294BC4B70017188F /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = EC2011B9294BC4B70017188F /* SwiftCSV */; };
-		EC4EDB4029AB5051000A899D /* CelMek in Frameworks */ = {isa = PBXBuildFile; productRef = EC4EDB3F29AB5051000A899D /* CelMek */; };
-		EC4EDB5229AE7FDB000A899D /* Sim in Frameworks */ = {isa = PBXBuildFile; productRef = EC4EDB5129AE7FDB000A899D /* Sim */; };
+		EC2160E729C58E6000C0E6E9 /* MagneticField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2160E629C58E6000C0E6E9 /* MagneticField.swift */; };
+		EC2160E929C58E7200C0E6E9 /* Atmosphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2160E829C58E7200C0E6E9 /* Atmosphere.swift */; };
+		EC23D3F429CB9A6800D323D2 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC23D3F329CB9A6800D323D2 /* Camera.swift */; };
 		EC73CF3C26C8DFD00024C0A5 /* Steppable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */; };
 		EC73CF3D26C8DFD00024C0A5 /* Steppable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */; };
 		EC73CF3E26C8DFD00024C0A5 /* Steppable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */; };
@@ -53,6 +54,9 @@
 		EC9AC28426A2C65B002EFBD9 /* OpenOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC28226A2C65B002EFBD9 /* OpenOrbit.swift */; };
 		EC9AC28726A2C75B002EFBD9 /* Mercury.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC28626A2C75B002EFBD9 /* Mercury.swift */; };
 		EC9AC28826A2C75B002EFBD9 /* Mercury.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC28626A2C75B002EFBD9 /* Mercury.swift */; };
+		ECEFC0A229B8A36500DB8D94 /* Sim in Frameworks */ = {isa = PBXBuildFile; productRef = ECEFC0A129B8A36500DB8D94 /* Sim */; };
+		ECEFC0A829B8A61200DB8D94 /* CelMek in Frameworks */ = {isa = PBXBuildFile; productRef = ECEFC0A729B8A61200DB8D94 /* CelMek */; };
+		ECEFC0AB29B8AA2C00DB8D94 /* Earth.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEFC0AA29B8AA2C00DB8D94 /* Earth.swift */; };
 		ECF36EF42945A975000600A8 /* Thruster.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36EF32945A975000600A8 /* Thruster.swift */; };
 		ECF36EF62945A98D000600A8 /* PropellerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36EF52945A98D000600A8 /* PropellerEngine.swift */; };
 		ECF36EF82945A9B0000600A8 /* TurbopropEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36EF72945A9B0000600A8 /* TurbopropEngine.swift */; };
@@ -61,7 +65,7 @@
 		ECF36EFE2945AA51000600A8 /* SolidRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36EFD2945AA51000600A8 /* SolidRocket.swift */; };
 		ECF36F002945AA6F000600A8 /* MagnetoTorqueBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36EFF2945AA6F000600A8 /* MagnetoTorqueBar.swift */; };
 		ECF36F022945AA93000600A8 /* ReactionWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36F012945AA93000600A8 /* ReactionWheel.swift */; };
-		ECF36F042945AB6B000600A8 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36F032945AB6B000600A8 /* Planet.swift */; };
+		ECF36F042945AB6B000600A8 /* SolarSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36F032945AB6B000600A8 /* SolarSystem.swift */; };
 		ECF36F0D294AF9C7000600A8 /* stars.csv in Resources */ = {isa = PBXBuildFile; fileRef = ECF36F0C294AF9C7000600A8 /* stars.csv */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +87,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC2160E629C58E6000C0E6E9 /* MagneticField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagneticField.swift; sourceTree = "<group>"; };
+		EC2160E829C58E7200C0E6E9 /* Atmosphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atmosphere.swift; sourceTree = "<group>"; };
+		EC23D3F329CB9A6800D323D2 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		EC4EDB5329AF1863000A899D /* COPYING.adoc */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING.adoc; sourceTree = "<group>"; };
 		EC4EDB5429AF1874000A899D /* README.adoc */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.adoc; sourceTree = "<group>"; };
 		EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steppable.swift; sourceTree = "<group>"; };
@@ -113,6 +120,7 @@
 		EC9AC27F26A2B877002EFBD9 /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
 		EC9AC28226A2C65B002EFBD9 /* OpenOrbit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenOrbit.swift; sourceTree = "<group>"; };
 		EC9AC28626A2C75B002EFBD9 /* Mercury.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mercury.swift; sourceTree = "<group>"; };
+		ECEFC0AA29B8AA2C00DB8D94 /* Earth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Earth.swift; sourceTree = "<group>"; };
 		ECF36EF32945A975000600A8 /* Thruster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thruster.swift; sourceTree = "<group>"; };
 		ECF36EF52945A98D000600A8 /* PropellerEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropellerEngine.swift; sourceTree = "<group>"; };
 		ECF36EF72945A9B0000600A8 /* TurbopropEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurbopropEngine.swift; sourceTree = "<group>"; };
@@ -121,7 +129,7 @@
 		ECF36EFD2945AA51000600A8 /* SolidRocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidRocket.swift; sourceTree = "<group>"; };
 		ECF36EFF2945AA6F000600A8 /* MagnetoTorqueBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnetoTorqueBar.swift; sourceTree = "<group>"; };
 		ECF36F012945AA93000600A8 /* ReactionWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionWheel.swift; sourceTree = "<group>"; };
-		ECF36F032945AB6B000600A8 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		ECF36F032945AB6B000600A8 /* SolarSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystem.swift; sourceTree = "<group>"; };
 		ECF36F0C294AF9C7000600A8 /* stars.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stars.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,12 +138,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC4EDB5229AE7FDB000A899D /* Sim in Frameworks */,
+				ECEFC0A229B8A36500DB8D94 /* Sim in Frameworks */,
 				EC2011B3294BC4760017188F /* Collections in Frameworks */,
 				EC2011A9294BC4120017188F /* Algorithms in Frameworks */,
 				EC2011AC294BC4480017188F /* ComplexModule in Frameworks */,
 				EC2011B5294BC4760017188F /* DequeModule in Frameworks */,
-				EC4EDB4029AB5051000A899D /* CelMek in Frameworks */,
+				ECEFC0A829B8A61200DB8D94 /* CelMek in Frameworks */,
 				EC2011AE294BC4480017188F /* Numerics in Frameworks */,
 				EC2011B0294BC4480017188F /* RealModule in Frameworks */,
 				EC2011BA294BC4B70017188F /* SwiftCSV in Frameworks */,
@@ -220,6 +228,7 @@
 		EC9AC26926A2AA69002EFBD9 /* Simulator */ = {
 			isa = PBXGroup;
 			children = (
+				ECEFC0A929B8AA1700DB8D94 /* Planets */,
 				ECF36F0629466BF1000600A8 /* Sensors */,
 				ECF36F052945AB77000600A8 /* Power */,
 				ECF36EF22945A940000600A8 /* Actuators */,
@@ -230,10 +239,13 @@
 				EC9AC27326A2AF9C002EFBD9 /* Payload.swift */,
 				EC9AC27926A2AFFE002EFBD9 /* Sensor.swift */,
 				EC9AC27C26A2B6A6002EFBD9 /* PropellantTank.swift */,
+				EC2160E829C58E7200C0E6E9 /* Atmosphere.swift */,
 				EC9AC28226A2C65B002EFBD9 /* OpenOrbit.swift */,
 				EC9716E326CF74420041FBF5 /* ReferenceFrame.swift */,
-				ECF36F032945AB6B000600A8 /* Planet.swift */,
+				ECF36F032945AB6B000600A8 /* SolarSystem.swift */,
 				EC789B8629B356CB00DC85EC /* Geometries.swift */,
+				EC2160E629C58E6000C0E6E9 /* MagneticField.swift */,
+				EC23D3F329CB9A6800D323D2 /* Camera.swift */,
 			);
 			path = Simulator;
 			sourceTree = "<group>";
@@ -244,6 +256,14 @@
 				ECF36F0B294AF7AB000600A8 /* Mercury */,
 			);
 			path = Spacecraft;
+			sourceTree = "<group>";
+		};
+		ECEFC0A929B8AA1700DB8D94 /* Planets */ = {
+			isa = PBXGroup;
+			children = (
+				ECEFC0AA29B8AA2C00DB8D94 /* Earth.swift */,
+			);
+			path = Planets;
 			sourceTree = "<group>";
 		};
 		ECF36EF22945A940000600A8 /* Actuators */ = {
@@ -311,8 +331,8 @@
 				EC2011B4294BC4760017188F /* DequeModule */,
 				EC2011B6294BC4760017188F /* OrderedCollections */,
 				EC2011B9294BC4B70017188F /* SwiftCSV */,
-				EC4EDB3F29AB5051000A899D /* CelMek */,
-				EC4EDB5129AE7FDB000A899D /* Sim */,
+				ECEFC0A129B8A36500DB8D94 /* Sim */,
+				ECEFC0A729B8A61200DB8D94 /* CelMek */,
 			);
 			productName = "Open Orbit";
 			productReference = EC9AC23526A2AA0D002EFBD9 /* Open Orbit.app */;
@@ -390,8 +410,8 @@
 				EC2011AA294BC4480017188F /* XCRemoteSwiftPackageReference "swift-numerics" */,
 				EC2011B1294BC4760017188F /* XCRemoteSwiftPackageReference "swift-collections" */,
 				EC2011B8294BC4B70017188F /* XCRemoteSwiftPackageReference "SwiftCSV" */,
-				EC4EDB3E29AB5051000A899D /* XCRemoteSwiftPackageReference "swift-celmek" */,
-				EC4EDB5029AE7FDB000A899D /* XCRemoteSwiftPackageReference "swift-sim" */,
+				ECEFC0A029B8A36500DB8D94 /* XCRemoteSwiftPackageReference "swift-sim" */,
+				ECEFC0A629B8A61200DB8D94 /* XCRemoteSwiftPackageReference "swift-celmek" */,
 			);
 			productRefGroup = EC9AC23626A2AA0D002EFBD9 /* Products */;
 			projectDirPath = "";
@@ -441,10 +461,11 @@
 				ECF36EFE2945AA51000600A8 /* SolidRocket.swift in Sources */,
 				EC9716E726CF745C0041FBF5 /* SolarPanel.swift in Sources */,
 				EC9AC28026A2B877002EFBD9 /* Battery.swift in Sources */,
-				ECF36F042945AB6B000600A8 /* Planet.swift in Sources */,
+				ECF36F042945AB6B000600A8 /* SolarSystem.swift in Sources */,
 				ECF36F022945AA93000600A8 /* ReactionWheel.swift in Sources */,
 				ECF36EF62945A98D000600A8 /* PropellerEngine.swift in Sources */,
 				EC9716E426CF74420041FBF5 /* ReferenceFrame.swift in Sources */,
+				ECEFC0AB29B8AA2C00DB8D94 /* Earth.swift in Sources */,
 				EC9AC28726A2C75B002EFBD9 /* Mercury.swift in Sources */,
 				ECF36EFA2945A9E4000600A8 /* JetEngine.swift in Sources */,
 				ECF36F002945AA6F000600A8 /* MagnetoTorqueBar.swift in Sources */,
@@ -455,9 +476,12 @@
 				EC9AC27A26A2AFFE002EFBD9 /* Sensor.swift in Sources */,
 				EC9AC23B26A2AA0D002EFBD9 /* GameViewController.swift in Sources */,
 				EC9AC26B26A2ACFD002EFBD9 /* Spacecraft.swift in Sources */,
+				EC2160E729C58E6000C0E6E9 /* MagneticField.swift in Sources */,
 				ECF36EFC2945AA17000600A8 /* LiquidRocket.swift in Sources */,
+				EC23D3F429CB9A6800D323D2 /* Camera.swift in Sources */,
 				ECF36EF42945A975000600A8 /* Thruster.swift in Sources */,
 				EC9AC28326A2C65B002EFBD9 /* OpenOrbit.swift in Sources */,
+				EC2160E929C58E7200C0E6E9 /* Atmosphere.swift in Sources */,
 				EC73CF4026C8E4AE0024C0A5 /* VectorExtensions.swift in Sources */,
 				EC9AC27726A2AFC3002EFBD9 /* Actuator.swift in Sources */,
 				EC9AC26E26A2AE5F002EFBD9 /* SimObject.swift in Sources */,
@@ -850,17 +874,17 @@
 				minimumVersion = 0.8.1;
 			};
 		};
-		EC4EDB3E29AB5051000A899D /* XCRemoteSwiftPackageReference "swift-celmek" */ = {
+		ECEFC0A029B8A36500DB8D94 /* XCRemoteSwiftPackageReference "swift-sim" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/lorrden/swift-celmek";
+			repositoryURL = "git@github.com:lorrden/swift-sim.git";
 			requirement = {
 				branch = main;
 				kind = branch;
 			};
 		};
-		EC4EDB5029AE7FDB000A899D /* XCRemoteSwiftPackageReference "swift-sim" */ = {
+		ECEFC0A629B8A61200DB8D94 /* XCRemoteSwiftPackageReference "swift-celmek" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/lorrden/swift-sim";
+			repositoryURL = "https://github.com/lorrden/swift-celmek";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -909,15 +933,15 @@
 			package = EC2011B8294BC4B70017188F /* XCRemoteSwiftPackageReference "SwiftCSV" */;
 			productName = SwiftCSV;
 		};
-		EC4EDB3F29AB5051000A899D /* CelMek */ = {
+		ECEFC0A129B8A36500DB8D94 /* Sim */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EC4EDB3E29AB5051000A899D /* XCRemoteSwiftPackageReference "swift-celmek" */;
-			productName = CelMek;
-		};
-		EC4EDB5129AE7FDB000A899D /* Sim */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EC4EDB5029AE7FDB000A899D /* XCRemoteSwiftPackageReference "swift-sim" */;
+			package = ECEFC0A029B8A36500DB8D94 /* XCRemoteSwiftPackageReference "swift-sim" */;
 			productName = Sim;
+		};
+		ECEFC0A729B8A61200DB8D94 /* CelMek */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECEFC0A629B8A61200DB8D94 /* XCRemoteSwiftPackageReference "swift-celmek" */;
+			productName = CelMek;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

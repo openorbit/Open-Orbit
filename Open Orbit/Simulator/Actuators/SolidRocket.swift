@@ -28,4 +28,10 @@ class SolidRocketEngine : Actuator, Steppable {
   func step(dt: Double) {
         
   }
+
+  override func connect() {
+    let parent = sim.resolver.resolve(relative: "../", source: self) as! Stage
+    object = parent.object.childNode(withName: name, recursively: false)!
+    super.connect()
+  }
 }
