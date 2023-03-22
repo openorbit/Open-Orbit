@@ -11,6 +11,7 @@ import SceneKit
 class Camera : SCNNode {
   var lat: Double = 0
   var lon: Double = 0
+  var target: SCNNode?
   var _distance: Double = 0
   var distance: Double {
     set {
@@ -36,7 +37,13 @@ class Camera : SCNNode {
   }
 
   func look(at node: SCNNode) {
+    target = node
     constraints = [SCNLookAtConstraint(target: node)]
+
+    let x = node.position.x + distance * cos(lat) * cos(lon)
+    let y = node.position.y + distance * cos(lat) * sin(lon)
+    let z = node.position.z + distance * sin(lat)
+    position = SCNVector3(x, y, z)
   }
 
   func zoom(relative: Double) {
@@ -53,11 +60,10 @@ class Camera : SCNNode {
       lat += .pi
     }
 
-    let x = distance * cos(lat) * cos(lon)
-    let y = distance * cos(lat) * sin(lon)
-    let z = distance * sin(lat)
+    let x = target!.position.x + distance * cos(lat) * cos(lon)
+    let y = target!.position.y + distance * cos(lat) * sin(lon)
+    let z = target!.position.z + distance * sin(lat)
 
     position = SCNVector3(x, y, z)
   }
 }
-
