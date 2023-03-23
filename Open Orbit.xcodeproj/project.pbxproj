@@ -17,7 +17,6 @@
 		EC2011BA294BC4B70017188F /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = EC2011B9294BC4B70017188F /* SwiftCSV */; };
 		EC2160E729C58E6000C0E6E9 /* MagneticField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2160E629C58E6000C0E6E9 /* MagneticField.swift */; };
 		EC2160E929C58E7200C0E6E9 /* Atmosphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2160E829C58E7200C0E6E9 /* Atmosphere.swift */; };
-		EC23D3F429CB9A6800D323D2 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC23D3F329CB9A6800D323D2 /* Camera.swift */; };
 		EC73CF3C26C8DFD00024C0A5 /* Steppable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */; };
 		EC73CF3D26C8DFD00024C0A5 /* Steppable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */; };
 		EC73CF3E26C8DFD00024C0A5 /* Steppable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */; };
@@ -89,7 +88,6 @@
 /* Begin PBXFileReference section */
 		EC2160E629C58E6000C0E6E9 /* MagneticField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagneticField.swift; sourceTree = "<group>"; };
 		EC2160E829C58E7200C0E6E9 /* Atmosphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atmosphere.swift; sourceTree = "<group>"; };
-		EC23D3F329CB9A6800D323D2 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		EC4EDB5329AF1863000A899D /* COPYING.adoc */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING.adoc; sourceTree = "<group>"; };
 		EC4EDB5429AF1874000A899D /* README.adoc */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.adoc; sourceTree = "<group>"; };
 		EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steppable.swift; sourceTree = "<group>"; };
@@ -245,7 +243,6 @@
 				ECF36F032945AB6B000600A8 /* SolarSystem.swift */,
 				EC789B8629B356CB00DC85EC /* Geometries.swift */,
 				EC2160E629C58E6000C0E6E9 /* MagneticField.swift */,
-				EC23D3F329CB9A6800D323D2 /* Camera.swift */,
 			);
 			path = Simulator;
 			sourceTree = "<group>";
@@ -478,7 +475,6 @@
 				EC9AC26B26A2ACFD002EFBD9 /* Spacecraft.swift in Sources */,
 				EC2160E729C58E6000C0E6E9 /* MagneticField.swift in Sources */,
 				ECF36EFC2945AA17000600A8 /* LiquidRocket.swift in Sources */,
-				EC23D3F429CB9A6800D323D2 /* Camera.swift in Sources */,
 				ECF36EF42945A975000600A8 /* Thruster.swift in Sources */,
 				EC9AC28326A2C65B002EFBD9 /* OpenOrbit.swift in Sources */,
 				EC2160E929C58E7200C0E6E9 /* Atmosphere.swift in Sources */,

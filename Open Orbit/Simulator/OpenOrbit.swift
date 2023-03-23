@@ -11,7 +11,8 @@ import Sim
 
 class OpenOrbit {
   var scene: SCNScene
-  var camera: Camera
+  var cameraController: SCNCameraController
+  var cameraNode: SCNNode
   var time: Double = 2451544.50000 // 2000-01-01 00:00:00
   var sim = SimulatorImpl() as Simulator
   var stepSize: Double = 0.0
@@ -27,11 +28,14 @@ class OpenOrbit {
     currentSpacecraft = sim.getRootModel(name: "Mercury") as? Spacecraft
 
     // create and add a camera to the scene
-    camera = Camera(name: "Camera")
-    scene.rootNode.addChildNode(camera)
-
-    camera.distance = 30
-    camera.look(at: currentSpacecraft!.stages[0].object)
+    cameraController = SCNCameraController()
+    cameraNode = SCNNode()
+    cameraNode.name = "Camera"
+    cameraNode.camera = SCNCamera()
+    scene.rootNode.addChildNode(cameraNode)
+    cameraController.pointOfView = cameraNode
+    cameraNode.constraints = [SCNLookAtConstraint(target: currentSpacecraft!.stages[0].object)]
+    cameraController.interactionMode = .orbitTurntable
 
     for stage in currentSpacecraft!.stages {
       addObjectToScene(object: stage.object)
@@ -65,7 +69,7 @@ class OpenOrbit {
                                  NSImage(imageLiteralResourceName:"eso0932a_pz")]
     scene.physicsWorld.gravity = SCNVector3(x: 0, y: 0, z: 0)
 
-    camera.addChildNode(createICRFGridNode())
+    cameraNode.addChildNode(createICRFGridNode())
 
     printScene()
   }
