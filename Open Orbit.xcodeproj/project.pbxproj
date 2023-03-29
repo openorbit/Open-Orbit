@@ -17,6 +17,8 @@
 		EC2011BA294BC4B70017188F /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = EC2011B9294BC4B70017188F /* SwiftCSV */; };
 		EC2160E729C58E6000C0E6E9 /* MagneticField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2160E629C58E6000C0E6E9 /* MagneticField.swift */; };
 		EC2160E929C58E7200C0E6E9 /* Atmosphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2160E829C58E7200C0E6E9 /* Atmosphere.swift */; };
+		EC23D3F629CCD0CB00D323D2 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC23D3F529CCD0CB00D323D2 /* World.swift */; };
+		EC23D3F829D150F900D323D2 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC23D3F729D150F900D323D2 /* Input.swift */; };
 		EC73CF3C26C8DFD00024C0A5 /* Steppable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */; };
 		EC73CF3D26C8DFD00024C0A5 /* Steppable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */; };
 		EC73CF3E26C8DFD00024C0A5 /* Steppable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */; };
@@ -24,6 +26,7 @@
 		EC73CF4126C8E4AE0024C0A5 /* VectorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3F26C8E4AE0024C0A5 /* VectorExtensions.swift */; };
 		EC73CF4226C8E4AE0024C0A5 /* VectorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3F26C8E4AE0024C0A5 /* VectorExtensions.swift */; };
 		EC789B8729B356CB00DC85EC /* Geometries.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC789B8629B356CB00DC85EC /* Geometries.swift */; };
+		EC80AA3829D2B0B500D3B5F1 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC80AA3729D2B0B500D3B5F1 /* UserDefaults.plist */; };
 		EC9716E426CF74420041FBF5 /* ReferenceFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9716E326CF74420041FBF5 /* ReferenceFrame.swift */; };
 		EC9716E526CF74420041FBF5 /* ReferenceFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9716E326CF74420041FBF5 /* ReferenceFrame.swift */; };
 		EC9716E726CF745C0041FBF5 /* SolarPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9716E626CF745C0041FBF5 /* SolarPanel.swift */; };
@@ -88,11 +91,14 @@
 /* Begin PBXFileReference section */
 		EC2160E629C58E6000C0E6E9 /* MagneticField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagneticField.swift; sourceTree = "<group>"; };
 		EC2160E829C58E7200C0E6E9 /* Atmosphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atmosphere.swift; sourceTree = "<group>"; };
+		EC23D3F529CCD0CB00D323D2 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
+		EC23D3F729D150F900D323D2 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		EC4EDB5329AF1863000A899D /* COPYING.adoc */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING.adoc; sourceTree = "<group>"; };
 		EC4EDB5429AF1874000A899D /* README.adoc */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.adoc; sourceTree = "<group>"; };
 		EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steppable.swift; sourceTree = "<group>"; };
 		EC73CF3F26C8E4AE0024C0A5 /* VectorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorExtensions.swift; sourceTree = "<group>"; };
 		EC789B8629B356CB00DC85EC /* Geometries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometries.swift; sourceTree = "<group>"; };
+		EC80AA3729D2B0B500D3B5F1 /* UserDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
 		EC9716E326CF74420041FBF5 /* ReferenceFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceFrame.swift; sourceTree = "<group>"; };
 		EC9716E626CF745C0041FBF5 /* SolarPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarPanel.swift; sourceTree = "<group>"; };
 		EC9AC23526A2AA0D002EFBD9 /* Open Orbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Open Orbit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +207,7 @@
 				EC9AC24326A2AA0E002EFBD9 /* Info.plist */,
 				EC9AC24426A2AA0E002EFBD9 /* Open_Orbit.entitlements */,
 				EC73CF3F26C8E4AE0024C0A5 /* VectorExtensions.swift */,
+				EC80AA3729D2B0B500D3B5F1 /* UserDefaults.plist */,
 			);
 			path = "Open Orbit";
 			sourceTree = "<group>";
@@ -232,6 +239,7 @@
 				ECF36EF22945A940000600A8 /* Actuators */,
 				EC9AC28526A2C740002EFBD9 /* Spacecraft */,
 				EC9AC26A26A2ACFD002EFBD9 /* Spacecraft.swift */,
+				EC23D3F529CCD0CB00D323D2 /* World.swift */,
 				EC73CF3B26C8DFD00024C0A5 /* Steppable.swift */,
 				EC9AC26D26A2AE5F002EFBD9 /* SimObject.swift */,
 				EC9AC27326A2AF9C002EFBD9 /* Payload.swift */,
@@ -243,6 +251,7 @@
 				ECF36F032945AB6B000600A8 /* SolarSystem.swift */,
 				EC789B8629B356CB00DC85EC /* Geometries.swift */,
 				EC2160E629C58E6000C0E6E9 /* MagneticField.swift */,
+				EC23D3F729D150F900D323D2 /* Input.swift */,
 			);
 			path = Simulator;
 			sourceTree = "<group>";
@@ -427,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC9AC24226A2AA0E002EFBD9 /* Main.storyboard in Resources */,
+				EC80AA3829D2B0B500D3B5F1 /* UserDefaults.plist in Resources */,
 				EC9AC23F26A2AA0E002EFBD9 /* Assets.xcassets in Resources */,
 				ECF36F0D294AF9C7000600A8 /* stars.csv in Resources */,
 				EC9AC23D26A2AA0D002EFBD9 /* art.scnassets in Resources */,
@@ -454,9 +464,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC23D3F829D150F900D323D2 /* Input.swift in Sources */,
 				EC789B8729B356CB00DC85EC /* Geometries.swift in Sources */,
 				ECF36EFE2945AA51000600A8 /* SolidRocket.swift in Sources */,
 				EC9716E726CF745C0041FBF5 /* SolarPanel.swift in Sources */,
+				EC23D3F629CCD0CB00D323D2 /* World.swift in Sources */,
 				EC9AC28026A2B877002EFBD9 /* Battery.swift in Sources */,
 				ECF36F042945AB6B000600A8 /* SolarSystem.swift in Sources */,
 				ECF36F022945AA93000600A8 /* ReactionWheel.swift in Sources */,

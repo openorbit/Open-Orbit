@@ -138,10 +138,22 @@ class Stage : Model {
 class Spacecraft : Model {
   var stages: [Stage] = []
   var stageJoints: [SCNPhysicsSliderJoint] = []
+  var physicsWorld: SCNPhysicsWorld!
+  var object: SCNNode
+  var body: SCNPhysicsBody! {
+    didSet {
+      object.physicsBody = body
+    }
+  }
+
   override init(name: String) {
+    self.object = SCNNode()
     super.init(name: name)
   }
 
+  override func connect() {
+    physicsWorld = (sim.resolver.resolve(absolute: "/World") as! World).physicsWorld
+  }
   func detatch() {
 
   }

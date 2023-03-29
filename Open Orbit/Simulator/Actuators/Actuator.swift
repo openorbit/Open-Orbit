@@ -72,7 +72,9 @@ class Actuator : Model {
     self.object.addChildNode(object)
   }
 
+  func toggle() {
 
+  }
 }
 
 class ActuatorGroup : Model {

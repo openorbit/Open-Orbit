@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>controls</key>
+	<dict>
+		<key>keyboard</key>
+		<dict>
+			<key>i</key>
+			<string>toggle-icrf-grid</string>
+			<key>w</key>
+			<string>pitch-down</string>
+			<key>a</key>
+			<string>roll-left</string>
+			<key>s</key>
+			<string>pitch-up</string>
+			<key>d</key>
+			<string>roll-right</string>
+			<key>q</key>
+			<string>yaw-left</string>
+			<key>e</key>
+			<string>yaw-right</string>
+			<key>space</key>
+			<string>toggle-engine</string>
+			<key>c</key>
+			<string>screenshot</string>
+			<key>arrow-up</key>
+			<string>camera-up</string>
+			<key>arrow-down</key>
+			<string>camera-down</string>
+			<key>arrow-left</key>
+			<string>camera-left</string>
+			<key>arrow-right</key>
+			<string>camera-right</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -17,10 +17,12 @@ class OpenOrbit {
   var sim = SimulatorImpl() as Simulator
   var stepSize: Double = 0.0
   var currentSpacecraft: Spacecraft?
+  var inputSystem: InputSystem
 
   init() {
+    inputSystem = InputSystem()
     scene = SCNScene()
-
+    try! sim.add(model: World(name: "World", world: scene.physicsWorld))
     try! sim.add(model: createSolarSystem(sim: sim))
     try! sim.add(model: Mercury(name: "Mercury"))
     sim.connect()
@@ -72,6 +74,23 @@ class OpenOrbit {
     cameraNode.addChildNode(createICRFGridNode())
 
     printScene()
+
+
+    inputSystem.add(button: "toggle-engine") {
+      self.toggleEngine()
+    }
+    inputSystem.add(button: "toggle-icrf-grid") {
+      self.toggleICRFGrid()
+    }
+
+    inputSystem.add(axis: "yaw", min: -1.0, max: 1.0) {
+    }
+    inputSystem.add(axis: "roll", min: -1.0, max: 1.0) {
+    }
+    inputSystem.add(axis: "pitch", min: -1.0, max: 1.0) {
+    }
+    inputSystem.add(axis: "throttle", min: 0.0, max: 1.0) {
+    }
   }
 
   func printNode(node: SCNNode, indent: Int) {
@@ -136,4 +155,11 @@ class OpenOrbit {
     let nanos = Int(delta*1e9)
     sim.run(for: nanos)
   }
+
+  func rollLeft() {}
+  func rollRight() {}
+  func yawLeft() {}
+  func yawRight() {}
+  func pitchUp() {}
+  func pitchDown() {}
 }

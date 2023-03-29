@@ -146,7 +146,8 @@ class Mercury : Spacecraft {
   var detatchIsPossible: Bool = true
   var redstone: Stage! = nil
   var capsule: Stage! = nil
-  var connector: SCNPhysicsSliderJoint! = nil
+  var currentStage: Stage! = nil
+
   override init(name: String) {
     super.init(name: name)
     try! add(child: Redstone(name: "Mercury-Redstone", at: SIMD3<Double>(0.0, 0.0, 0.0)))
@@ -174,24 +175,29 @@ class Mercury : Spacecraft {
   override func connect() {
     capsule = sim.resolver.resolve(relative: "Command-Module", source: self) as? Stage
     redstone = sim.resolver.resolve(relative: "Mercury-Redstone", source: self) as? Stage
+    // let world = sim.resolver.resolve(absolute: "/World") as! World
     stages.append(capsule!)
     stages.append(redstone!)
 
-    connector = SCNPhysicsSliderJoint(
-      bodyA: capsule.body,
-      axisA: SCNVector3(x: 0, y: 0, z: 0),
-      anchorA: SCNVector3(x: 0, y: 0, z: 0),
-      bodyB: redstone.body,
-      axisB: SCNVector3(x: 0, y: 0, z: 0),
-      anchorB: SCNVector3(x: 0, y: 0, z: 0)
-    )
+    var bodies: [SCNPhysicsShape] = []
+    var transforms: [NSValue] = []
+    for stage in stages {
+      bodies.append(stage.body.physicsShape!)
+      let matrix = SCNMatrix4MakeTranslation(stage.pos.x, stage.pos.y, stage.pos.z)
+      transforms.append(NSValue(scnMatrix4: matrix))
+    }
+    let shape = SCNPhysicsShape(shapes: bodies, transforms: transforms)
+    object.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape)
+
+    currentStage = redstone
   }
+
   override func toggleEngine() {
-    for engine in redstone.engines {
-      engine.object.isHidden = !engine.object.isHidden
+    for engine in currentStage.engines {
+      engine.toggle()
     }
   }
- /*
+/*
 func
 axisUpdate()
 {

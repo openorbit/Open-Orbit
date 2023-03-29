@@ -34,4 +34,8 @@ class SolidRocketEngine : Actuator, Steppable {
     object = parent.object.childNode(withName: name, recursively: false)!
     super.connect()
   }
+
+  override func toggle() {
+    object.isHidden = !object.isHidden
+  }
 }

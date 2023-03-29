@@ -8,60 +8,23 @@
 import SceneKit
 import QuartzCore
 
-enum KeyCode : UInt16 {
-  case q = 12
-  case w = 13
-  case e = 14
-  case r = 15
-  case t = 17
-  case y = 16
-  case u = 32
-  case i = 34
-  case o = 31
-  case p = 35
-  case a = 0
-  case s = 1
-  case d = 2
-  case f = 3
-  case g = 5
-  case h = 4
-  case j = 38
-  case k = 40
-  case l = 37
-  case z = 6
-  case x = 7
-  case c = 8
-  case v = 9
-  case b = 11
-  case n = 45
-  case m = 46
+func loadDefaults() {
+  // Insert code here to initialize your application
+  guard let path = Bundle.main.path(forResource: "UserDefaults", ofType: "plist") else {
+    print("Could not find UserDefaults.plist in app bundle")
+    return
+  }
+  guard let plist = FileManager.default.contents(atPath: path) else {
+    print("Could not load UserDefaults.plist in app bundle")
+    return
+  }
+  guard let defaults = try? PropertyListSerialization.propertyList(from: plist, format: nil)
+          as? [String: Any] else {
+    print("Could not deserialize UserDefaults.plist in app bundle")
+    return
+  }
+  UserDefaults.standard.register(defaults: defaults)
 
-  case up = 126
-  case down = 125
-  case left = 123
-  case right = 124
-
-  case semi = 41
-  case quote = 39
-  case backslash = 42
-  case leftbrack = 33
-  case rightbrack = 30
-  case comma = 43
-  case period = 47
-  case slash = 44
-  case paragraph = 10
-  case key_1 = 18
-  case key_2 = 19
-  case key_3 = 20
-  case key_4 = 21
-  case key_5 = 23
-  case key_6 = 22
-  case key_7 = 26
-  case key_8 = 28
-  case key_9 = 25
-  case key_0 = 29
-  case key_minus = 27
-  case key_equals = 24
 }
 
 class GameViewController: NSViewController, SCNSceneRendererDelegate {
@@ -73,8 +36,29 @@ class GameViewController: NSViewController, SCNSceneRendererDelegate {
   }
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    loadDefaults()
+    
     orbit = OpenOrbit()
+
+    orbit.inputSystem.add(button: "screenshot") {
+      let img = self.scnView.snapshot()
+      let urlPath = URL(filePath: NSSearchPathForDirectoriesInDomains(
+        .picturesDirectory,
+        .userDomainMask, true).first!)
+        .appending(component: "openorbit.png")
+
+      let imageData = img.tiffRepresentation!
+      let imageRep = NSBitmapImageRep(data: imageData)
+      let pngData = imageRep?.representation(using: .png, properties: [:])
+      do {
+        try pngData?.write(to: urlPath)
+      } catch {
+        let alert = NSAlert(error: error)
+        alert.alertStyle = .warning
+        alert.beginSheetModal(for: self.view.window!)
+      }
+    }
+
 
     // retrieve the SCNView
     scnView.delegate = self
@@ -103,6 +87,7 @@ class GameViewController: NSViewController, SCNSceneRendererDelegate {
     gestureRecognizers.insert(zoomGesture, at: 2)
     scnView.gestureRecognizers = gestureRecognizers
 
+    orbit.inputSystem.configure()
   }
 
   @objc
@@ -151,31 +136,9 @@ class GameViewController: NSViewController, SCNSceneRendererDelegate {
     guard !event.isARepeat else {
       return
     }
-
-    switch event.keyCode {
-    case KeyCode.i.rawValue:
-      orbit.toggleICRFGrid()
-    case KeyCode.e.rawValue:
-      orbit.toggleEngine()
-    case KeyCode.c.rawValue:
-      let img = scnView.snapshot()
-      let urlPath = URL(filePath: NSSearchPathForDirectoriesInDomains(
-        .picturesDirectory,
-        .userDomainMask, true).first!)
-      .appending(component: "openorbit.png")
-
-      let imageData = img.tiffRepresentation!
-      let imageRep = NSBitmapImageRep(data: imageData)
-      let pngData = imageRep?.representation(using: .png, properties: [:])
-      do {
-        try pngData?.write(to: urlPath)
-      } catch {
-        let alert = NSAlert(error: error)
-        alert.alertStyle = .warning
-        alert.beginSheetModal(for: self.view.window!)
-      }
-    default:
-      print("pressed \(event.keyCode)")
+    let code = KeyCode(rawValue: event.keyCode)
+    if let code {
+      orbit.inputSystem.dispatch(key: code)
     }
   }
 
