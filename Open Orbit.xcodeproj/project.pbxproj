@@ -27,6 +27,7 @@
 		EC73CF4226C8E4AE0024C0A5 /* VectorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC73CF3F26C8E4AE0024C0A5 /* VectorExtensions.swift */; };
 		EC789B8729B356CB00DC85EC /* Geometries.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC789B8629B356CB00DC85EC /* Geometries.swift */; };
 		EC80AA3829D2B0B500D3B5F1 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC80AA3729D2B0B500D3B5F1 /* UserDefaults.plist */; };
+		EC80AA3B29D9587600D3B5F1 /* Sim in Frameworks */ = {isa = PBXBuildFile; productRef = EC80AA3A29D9587600D3B5F1 /* Sim */; };
 		EC9716E426CF74420041FBF5 /* ReferenceFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9716E326CF74420041FBF5 /* ReferenceFrame.swift */; };
 		EC9716E526CF74420041FBF5 /* ReferenceFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9716E326CF74420041FBF5 /* ReferenceFrame.swift */; };
 		EC9716E726CF745C0041FBF5 /* SolarPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9716E626CF745C0041FBF5 /* SolarPanel.swift */; };
@@ -56,7 +57,6 @@
 		EC9AC28426A2C65B002EFBD9 /* OpenOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC28226A2C65B002EFBD9 /* OpenOrbit.swift */; };
 		EC9AC28726A2C75B002EFBD9 /* Mercury.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC28626A2C75B002EFBD9 /* Mercury.swift */; };
 		EC9AC28826A2C75B002EFBD9 /* Mercury.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AC28626A2C75B002EFBD9 /* Mercury.swift */; };
-		ECEFC0A229B8A36500DB8D94 /* Sim in Frameworks */ = {isa = PBXBuildFile; productRef = ECEFC0A129B8A36500DB8D94 /* Sim */; };
 		ECEFC0A829B8A61200DB8D94 /* CelMek in Frameworks */ = {isa = PBXBuildFile; productRef = ECEFC0A729B8A61200DB8D94 /* CelMek */; };
 		ECEFC0AB29B8AA2C00DB8D94 /* Earth.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEFC0AA29B8AA2C00DB8D94 /* Earth.swift */; };
 		ECF36EF42945A975000600A8 /* Thruster.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF36EF32945A975000600A8 /* Thruster.swift */; };
@@ -142,7 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECEFC0A229B8A36500DB8D94 /* Sim in Frameworks */,
+				EC80AA3B29D9587600D3B5F1 /* Sim in Frameworks */,
 				EC2011B3294BC4760017188F /* Collections in Frameworks */,
 				EC2011A9294BC4120017188F /* Algorithms in Frameworks */,
 				EC2011AC294BC4480017188F /* ComplexModule in Frameworks */,
@@ -337,8 +337,8 @@
 				EC2011B4294BC4760017188F /* DequeModule */,
 				EC2011B6294BC4760017188F /* OrderedCollections */,
 				EC2011B9294BC4B70017188F /* SwiftCSV */,
-				ECEFC0A129B8A36500DB8D94 /* Sim */,
 				ECEFC0A729B8A61200DB8D94 /* CelMek */,
+				EC80AA3A29D9587600D3B5F1 /* Sim */,
 			);
 			productName = "Open Orbit";
 			productReference = EC9AC23526A2AA0D002EFBD9 /* Open Orbit.app */;
@@ -416,8 +416,8 @@
 				EC2011AA294BC4480017188F /* XCRemoteSwiftPackageReference "swift-numerics" */,
 				EC2011B1294BC4760017188F /* XCRemoteSwiftPackageReference "swift-collections" */,
 				EC2011B8294BC4B70017188F /* XCRemoteSwiftPackageReference "SwiftCSV" */,
-				ECEFC0A029B8A36500DB8D94 /* XCRemoteSwiftPackageReference "swift-sim" */,
 				ECEFC0A629B8A61200DB8D94 /* XCRemoteSwiftPackageReference "swift-celmek" */,
+				EC80AA3929D9587600D3B5F1 /* XCRemoteSwiftPackageReference "swift-sim" */,
 			);
 			productRefGroup = EC9AC23626A2AA0D002EFBD9 /* Products */;
 			projectDirPath = "";
@@ -882,7 +882,7 @@
 				minimumVersion = 0.8.1;
 			};
 		};
-		ECEFC0A029B8A36500DB8D94 /* XCRemoteSwiftPackageReference "swift-sim" */ = {
+		EC80AA3929D9587600D3B5F1 /* XCRemoteSwiftPackageReference "swift-sim" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/lorrden/swift-sim.git";
 			requirement = {
@@ -941,9 +941,9 @@
 			package = EC2011B8294BC4B70017188F /* XCRemoteSwiftPackageReference "SwiftCSV" */;
 			productName = SwiftCSV;
 		};
-		ECEFC0A129B8A36500DB8D94 /* Sim */ = {
+		EC80AA3A29D9587600D3B5F1 /* Sim */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = ECEFC0A029B8A36500DB8D94 /* XCRemoteSwiftPackageReference "swift-sim" */;
+			package = EC80AA3929D9587600D3B5F1 /* XCRemoteSwiftPackageReference "swift-sim" */;
 			productName = Sim;
 		};
 		ECEFC0A729B8A61200DB8D94 /* CelMek */ = {
