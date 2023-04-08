@@ -154,6 +154,7 @@ class OpenOrbit {
     let delta = time - timeToRun!
     let nanos = Int(delta*1e9)
     sim.run(for: nanos)
+    timeToRun = time
   }
 
   func rollLeft() {}

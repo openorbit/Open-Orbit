@@ -60,7 +60,7 @@ class VSOPCelestialBody : Model, Steppable {
   func step(dt: Double) {
     let simTime = sim.timeKeeper.simTime
     let jd = sim.timeKeeper.convertToJD(simTime: simTime)
-    let (pos, vel, _) = body.position(jd: jd)
+    let (pos, vel, _, _) = body.position(jd: jd)
 
     position = pos
     velocity = vel
@@ -68,9 +68,64 @@ class VSOPCelestialBody : Model, Steppable {
 }
 
 
-class SolarSystem : Model {
+class SolarSystem : Model, ClockedModel {
   override init(name: String) {
     super.init(name: name)
+  }
+
+
+  var frequency: Double = 1.0
+
+  var period: Double {
+    get {
+      return 1.0/frequency
+    }
+    set {
+      frequency = 1.0/newValue
+    }
+  }
+
+  var planets : [VSOPCelestialBody] = []
+
+  func tick(dt: Double) {
+    let epochTime = sim.timeKeeper.epochTime
+    let epochJD = sim.timeKeeper.convertToJD(epochTime: epochTime)
+    //let clock = ContinuousClock()
+
+    Task {
+      let positions
+      = await withTaskGroup(of: (SIMD3<Double>, SIMD3<Double>, Double, vsop87_body_id).self,
+                            returning: [(SIMD3<Double>, SIMD3<Double>, Double, vsop87_body_id)].self) { group in
+
+        for planet in planets {
+          group.addTask() {
+            return planet.body.position(jd: epochJD)
+          }
+        }
+
+        var result: [(SIMD3<Double>, SIMD3<Double>, Double, vsop87_body_id)] = []
+        for await pos in group {
+          result.append(pos)
+        }
+        return result
+      }
+
+      for (p, v, _, bodyId) in positions {
+        planets[bodyId.rawValue].position = p
+        planets[bodyId.rawValue].velocity = v
+      }
+    }
+  }
+  override func connect() {
+    planets.append(sim.resolver.resolve(relative: "Sun", source: self) as! VSOPCelestialBody)
+    planets.append(sim.resolver.resolve(relative: "Mercury", source: self) as! VSOPCelestialBody)
+    planets.append(sim.resolver.resolve(relative: "Venus", source: self) as! VSOPCelestialBody)
+    planets.append(sim.resolver.resolve(relative: "Earth", source: self) as! VSOPCelestialBody)
+    planets.append(sim.resolver.resolve(relative: "Mars", source: self) as! VSOPCelestialBody)
+    planets.append(sim.resolver.resolve(relative: "Jupiter", source: self) as! VSOPCelestialBody)
+    planets.append(sim.resolver.resolve(relative: "Saturn", source: self) as! VSOPCelestialBody)
+    planets.append(sim.resolver.resolve(relative: "Uranus", source: self) as! VSOPCelestialBody)
+    planets.append(sim.resolver.resolve(relative: "Neptune", source: self) as! VSOPCelestialBody)
   }
 }
 
@@ -84,7 +139,7 @@ func createSolarSystem(sim: Simulator) -> SolarSystem {
   let earth = VSOPCelestialBody(name: "Earth", body: earth)
   try! earth.add(child: CelestialBody(name: "Moon"))
 
-  let mars = CelestialBody(name: "Mars")
+  let mars = VSOPCelestialBody(name: "Mars", body: mars)
 
   let jupiter = VSOPCelestialBody(name: "Jupiter", body: jupiter)
   try! jupiter.add(child: CelestialBody(name: "Ganymede"))
