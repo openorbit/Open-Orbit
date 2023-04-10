@@ -35,7 +35,7 @@ class OpenOrbit {
     cameraNode.name = "Camera"
     cameraNode.camera = SCNCamera()
     cameraNode.position = SCNVector3(x: 0.0, y: 0.0, z: 10.0)
-    scene.rootNode.addChildNode(cameraNode)
+    currentSpacecraft!.stages[0].object.addChildNode(cameraNode)
     cameraController.pointOfView = cameraNode
     cameraController.automaticTarget = true
     cameraNode.constraints = [SCNLookAtConstraint(target: currentSpacecraft!.stages[0].object)]
