@@ -19,6 +19,8 @@ class OpenOrbit {
   var currentSpacecraft: Spacecraft?
   var inputSystem: InputSystem
   var icrfGrid: SCNNode!
+  var objects: [Stage] = []
+  var selectedObject: Int = 0
   init() {
     inputSystem = InputSystem()
     scene = SCNScene()
@@ -28,18 +30,22 @@ class OpenOrbit {
     sim.connect()
 
     currentSpacecraft = sim.getRootModel(name: "Mercury") as? Spacecraft
-
+    for stage in currentSpacecraft!.stages {
+      objects.append(stage)
+    }
     // create and add a camera to the scene
     cameraController = SCNCameraController()
     cameraNode = SCNNode()
     cameraNode.name = "Camera"
     cameraNode.camera = SCNCamera()
-    cameraNode.position = SCNVector3(x: 0.0, y: 0.0, z: 10.0)
-    currentSpacecraft!.stages[0].object.addChildNode(cameraNode)
+
     cameraController.pointOfView = cameraNode
     cameraController.automaticTarget = true
-    cameraNode.constraints = [SCNLookAtConstraint(target: currentSpacecraft!.stages[0].object)]
     cameraController.interactionMode = .orbitTurntable
+
+    cameraNode.position = SCNVector3(x: 0.0, y: 0.0, z: 10.0)
+    objects[selectedObject].object.addChildNode(cameraNode)
+    cameraNode.constraints = [SCNLookAtConstraint(target: objects[selectedObject].object)]
 
     for stage in currentSpacecraft!.stages {
       addObjectToScene(object: stage.object)
@@ -77,6 +83,24 @@ class OpenOrbit {
     cameraNode.addChildNode(icrfGrid)
 
     // printScene()
+    inputSystem.add(button: "next-object") {
+      // Cycle through selected objects
+      self.selectedObject += 1
+      if self.selectedObject >= self.objects.count {
+        self.selectedObject = 0
+      }
+      self.objects[self.selectedObject].object.addChildNode(self.cameraNode)
+      self.cameraNode.constraints = [SCNLookAtConstraint(target: self.objects[self.selectedObject].object)]
+    }
+    inputSystem.add(button: "previous-object") {
+      // Cycle through selected objects
+      self.selectedObject -= 1
+      if self.selectedObject < 0 {
+        self.selectedObject = self.objects.count - 1
+      }
+      self.objects[self.selectedObject].object.addChildNode(self.cameraNode)
+      self.cameraNode.constraints = [SCNLookAtConstraint(target: self.objects[self.selectedObject].object)]
+    }
 
     inputSystem.add(button: "toggle-engine") {
       self.toggleEngine()

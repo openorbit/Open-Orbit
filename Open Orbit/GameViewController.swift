@@ -137,6 +137,7 @@ class GameViewController: NSViewController, SCNSceneRendererDelegate {
     guard !event.isARepeat else {
       return
     }
+
     let code = KeyCode(rawValue: event.keyCode)
     if let code {
       orbit.inputSystem.dispatch(key: code)

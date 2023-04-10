@@ -6,6 +6,10 @@
 	<dict>
 		<key>keyboard</key>
 		<dict>
+			<key>]</key>
+			<string>next-object</string>
+			<key>[</key>
+			<string>previous-object</string>
 			<key>i</key>
 			<string>toggle-icrf-grid</string>
 			<key>w</key>

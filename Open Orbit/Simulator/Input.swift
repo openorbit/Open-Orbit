@@ -40,6 +40,9 @@ enum KeyCode : UInt16 {
   case left = 123
   case right = 124
 
+  case tab = 48
+  case backspace = 51
+
   case semi = 41
   case quote = 39
   case backslash = 42
@@ -141,6 +144,8 @@ class InputSystem {
     "down": .down,
     "left": .left,
     "right": .right,
+    "tab": .tab,
+    "backspace": .backspace,
 
     ";": .semi,
     "'": .quote,
