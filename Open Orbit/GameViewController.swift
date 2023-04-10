@@ -94,7 +94,8 @@ class GameViewController: NSViewController, SCNSceneRendererDelegate {
   func handlePan(_ gestureRecognizer: NSPanGestureRecognizer) {
     let point = gestureRecognizer.velocity(in: scnView)
     let vec = SIMD2<Double>(point.x / scnView.bounds.width, point.y / scnView.bounds.height)
-    orbit.cameraController.translateInCameraSpaceBy(x: Float(vec.x), y: Float(vec.y), z: 0)
+
+    orbit.cameraController.rotateBy(x: Float(vec.x), y: Float(vec.y))
   }
   @objc
   func handleZoom(_ gestureRecognizer: NSMagnificationGestureRecognizer) {

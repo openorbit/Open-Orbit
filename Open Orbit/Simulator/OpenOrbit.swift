@@ -18,7 +18,7 @@ class OpenOrbit {
   var stepSize: Double = 0.0
   var currentSpacecraft: Spacecraft?
   var inputSystem: InputSystem
-
+  var icrfGrid: SCNNode!
   init() {
     inputSystem = InputSystem()
     scene = SCNScene()
@@ -34,8 +34,10 @@ class OpenOrbit {
     cameraNode = SCNNode()
     cameraNode.name = "Camera"
     cameraNode.camera = SCNCamera()
+    cameraNode.position = SCNVector3(x: 0.0, y: 0.0, z: 10.0)
     scene.rootNode.addChildNode(cameraNode)
     cameraController.pointOfView = cameraNode
+    cameraController.automaticTarget = true
     cameraNode.constraints = [SCNLookAtConstraint(target: currentSpacecraft!.stages[0].object)]
     cameraController.interactionMode = .orbitTurntable
 
@@ -71,10 +73,10 @@ class OpenOrbit {
                                  NSImage(imageLiteralResourceName:"eso0932a_pz")]
     scene.physicsWorld.gravity = SCNVector3(x: 0, y: 0, z: 0)
 
-    cameraNode.addChildNode(createICRFGridNode())
+    icrfGrid = createICRFGridNode()
+    cameraNode.addChildNode(icrfGrid)
 
-    printScene()
-
+    // printScene()
 
     inputSystem.add(button: "toggle-engine") {
       self.toggleEngine()
@@ -141,7 +143,12 @@ class OpenOrbit {
   }
 
   func toggleICRFGrid() {
-    print("toggle icrf grid")
+    icrfGrid.isHidden = !icrfGrid.isHidden
+    if icrfGrid.isHidden {
+      print("turned off icrf grid")
+    } else {
+      print("turned on icrf grid")
+    }
   }
 
   func toggleEngine() {

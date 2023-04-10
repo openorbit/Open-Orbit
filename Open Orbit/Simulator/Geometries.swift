@@ -68,8 +68,7 @@ func createAxisNode() -> SCNNode {
 
 func createICRFGridNode() -> SCNNode {
 
-  var vertices: [SCNVector3] = [
-  ]
+  var vertices: [SCNVector3] = []
 
   let STACKS = 10
   let SLICES = 16
